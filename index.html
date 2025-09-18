@@ -12,7 +12,7 @@
     <div class="desktop">
       <nav class="navi">
         <ul class="navbar">
-          <li><a href="#czym-jest-rsv">Czym jest RSV_3?</a></li>
+          <li><a href="#czym-jest-rsv">Czym jest RSV_4?</a></li>
           <li><a href="#grupa-ryzyka">Grupa ryzyka</a></li>
           <li><a href="#rsv-vs-grypa">RSV vs. Grypa</a></li>
           <li><a href="#objawy-i-zagrozenia">Objawy i zagrożenia</a></li>
@@ -277,5 +277,31 @@
         </div>
       </footer>
     </div>
+    <script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slider-img');
+  
+  function showSlides() {
+    // Ukrywa wszystkie slajdy
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('active');
+    }
+    
+    // Zwiększa indeks i wraca do 0, gdy dojdzie do końca
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    
+    // Pokazuje aktywny slajd
+    slides[slideIndex - 1].classList.add('active');
+    
+    // Wywołuje funkcję co 5 sekund
+    setTimeout(showSlides, 5000);
+  }
+  
+  // Rozpoczyna animację
+  showSlides();
+</script>
   </body>
 </html>
