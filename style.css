@@ -50,12 +50,13 @@ body {
   background-color: var(--variable-collection-blue);
 }
 
+/* Zamiast background-image, teraz używamy tagu <img> w HTML */
 .header-img {
   flex: 1;
+  width: 100%;
+  height: auto;
   min-height: 400px;
-  background-image: url(./img/img.png);
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 
 .header-content {
@@ -328,12 +329,11 @@ section {
   max-width: 600px;
 }
 
+/* Zamiast background-image, teraz używamy tagu <img> w HTML */
 .ok-image {
   width: 200px;
-  height: 200px;
-  background-image: url(./img/vector-10.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
+  height: auto;
+  max-width: 100%;
 }
 
 /* Sekcja stopki */
