@@ -1,1443 +1,407 @@
-.element-czym-jest-RSV {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
+/* Główne style */
+body {
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  color: var(--variable-collection-TXT-blue);
   background-color: #ffffff;
 }
 
-.element-czym-jest-RSV .navi {
+.desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Sekcja nawigacji */
+.navi {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--variable-collection-dark-blue);
+  padding: 20px 0;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 20px 40px;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.navbar a {
+  font-family: "Pfizer Diatype-Bold", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Sekcja nagłówka */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: var(--variable-collection-blue);
+}
+
+.header-img {
+  flex: 1;
+  min-height: 400px;
+  background-image: url(./img/img.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  padding: 40px;
+  color: #ffffff;
+}
+
+.headline {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica, sans-serif;
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.subheadline {
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  margin-top: 30px;
+  background-color: var(--variable-collection-yellow);
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-text {
+  font-family: "Pfizer Diatype-Heavy", Helvetica, sans-serif;
+  font-weight: 900;
+  color: var(--variable-collection-TXT-blue);
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.arrow img {
+  width: 15px;
+  height: auto;
+}
+
+/* Sekcje ogólne */
+section {
+  width: 100%;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title, .section-title-alt, .section-title-main, .section-title-secondary {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica, sans-serif;
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title-alt, .section-title-main {
+  color: var(--variable-collection-dark-blue);
+}
+
+.section-title-alt {
+  color: #ffffff;
+}
+
+.section-text {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-text-alt {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+/* Sekcja "Czym jest RSV?" */
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon img {
+  width: 80px;
+  height: auto;
+}
+
+/* Sekcja "Kto jest w grupie ryzyka?" */
+.risk-group-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  flex-basis: calc(25% - 22.5px);
+  min-width: 200px;
+}
+
+.box img {
+  width: 100px;
+  height: auto;
+}
+
+.box-text {
+  font-family: "Pfizer Diatype-Heavy", Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* Sekcja "RSV a Grypa" */
+.rsv-vs-grypa-section {
+  background-color: var(--variable-collection-dark-blue);
+  color: #ffffff;
+}
+
+.comparative-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.box-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-basis: calc(50% - 20px);
+  min-width: 300px;
+}
+
+.box-comparison {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.box-comparison img {
+  width: 60px;
+  height: auto;
+}
+
+.data {
+  font-family: "Pfizer Tomorrow-Bold", Helvetica, sans-serif;
+  font-size: 48px;
+  color: var(--variable-collection-light-blue);
+}
+
+.box-description {
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Sekcja "Objawy i zagrożenia" */
+.symptoms-section {
+  background-color: #ffffff;
+}
+
+.symptoms-list {
+  margin-top: 40px;
+}
+
+.symptoms-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.symptom-column {
+  flex-basis: calc(50% - 20px);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.symptom-item {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.threats-section {
+  background-color: var(--variable-collection-pink);
+}
+
+.threats-text p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Sekcja "Dla kogo szczepionka" */
+.vaccine-section {
+  background-color: #ffffff;
+}
+
+.photo-card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  gap: 10px 10px;
-  padding: 32px 120px;
-  position: relative;
-  align-self: stretch;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.photo-card.reversed {
+  flex-direction: row-reverse;
+}
+
+.photo-card img {
   width: 100%;
-  flex: 0 0 auto;
-  background-color: var(--variable-collection-dark-blue);
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
 }
 
-.element-czym-jest-RSV .frame {
-  display: flex;
-  flex-direction: column;
-  width: 1200px;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 25px;
-  position: relative;
-}
-
-.element-czym-jest-RSV .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .div {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .pfizer-icon {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector {
-  position: absolute;
-  width: 31.25%;
-  height: 37.50%;
-  top: 50.00%;
-  left: 34.38%;
-}
-
-.element-czym-jest-RSV .img {
-  position: absolute;
-  width: 87.50%;
-  height: 87.50%;
-  top: 6.25%;
-  left: 6.25%;
-}
-
-.element-czym-jest-RSV .text-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 21px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .czym-jest-RSV {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Black", Helvetica;
-  font-weight: 900;
-  color: var(--variable-collection-light-blue);
-  font-size: 21px;
-  letter-spacing: 0;
-  line-height: normal;
-  text-decoration: underline;
-}
-
-.element-czym-jest-RSV .text-wrapper-2 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 21px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-3 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 21px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .frame-wrapper {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .div-wrapper {
-  display: flex;
-  width: 255px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 8px 24px;
-  position: relative;
-  background-color: var(--variable-collection-yellow);
-  border-radius: 28px;
-}
-
-.element-czym-jest-RSV .text-wrapper-4 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: var(--variable-collection-blue);
-  font-size: 21px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .frame-2 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 120px;
-  padding: 0px 0px 80px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: #ffffff;
-}
-
-.element-czym-jest-RSV .header {
-  height: 536px;
-  background-image: url(./img/background-image-czym-jest-rsv.svg);
-  background-size: 100% 100%;
-  position: relative;
-  width: 1440px;
-}
-
-.element-czym-jest-RSV .COPY {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 24px;
-  padding: 20px 64px 20px 120px;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: #0b76fd;
-  border-radius: 0px 74px 74px 0px;
-  overflow: hidden;
-}
-
-.element-czym-jest-RSV .czym-jest-RSV-2 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  color: #ffffff;
-  font-size: 62px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .copy {
-  display: flex;
-  flex-direction: column;
-  width: 1440px;
-  align-items: flex-end;
-  gap: 10px;
-  position: absolute;
-  top: 248px;
-  left: 0;
-}
-
-.element-czym-jest-RSV .syncytialny-wirus-wrapper {
-  display: flex;
-  width: 919px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 40px 120px 40px 104px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: var(--variable-collection-blue);
-  border-radius: 148px 0px 0px 148px;
-}
-
-.element-czym-jest-RSV .syncytialny-wirus {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.photo-content {
   flex: 1;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Sekcja "Gdzie się zaszczepić" */
+.where-to-vaccinate-section {
+  background-color: var(--variable-collection-blue);
   color: #ffffff;
-  font-size: 32px;
-  letter-spacing: 0;
-  line-height: normal;
+  padding: 60px 20px;
 }
 
-.element-czym-jest-RSV .span {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 32px;
-  letter-spacing: 0;
-}
-
-.element-czym-jest-RSV .text-wrapper-5 {
-  font-family: "Pfizer Diatype-Black", Helvetica;
-  font-weight: 900;
-}
-
-.element-czym-jest-RSV .COPY-wrapper {
+.main-content-row {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 40px;
-  padding: 0px 120px;
-  flex: 0 0 auto;
-  position: relative;
-  width: 1440px;
-  background-color: var(--variable-collection-dark-blue);
+  margin-top: 40px;
 }
 
-.element-czym-jest-RSV .COPY-2 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 24px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: #ffffff;
-}
-
-.element-czym-jest-RSV .frame-3 {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  position: relative;
+.main-content-text {
   flex: 1;
-  flex-grow: 1;
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 600px;
 }
 
-.element-czym-jest-RSV .IMG {
-  position: relative;
-  width: 85px;
-  height: 85px;
-  background-color: var(--variable-collection-light-blue);
-  border-radius: 500px;
-  overflow: hidden;
-}
-
-.element-czym-jest-RSV .element {
-  top: calc(50.00% - 24px);
-  left: calc(50.00% - 24px);
-  width: 50px;
-  height: 50px;
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-2 {
-  position: absolute;
-  width: 87.50%;
-  height: 84.38%;
-  top: 9.38%;
-  left: 6.25%;
-}
-
-.element-czym-jest-RSV .vector-3 {
-  position: absolute;
-  width: 6.25%;
-  height: 37.50%;
-  top: 21.88%;
-  left: 46.83%;
-}
-
-.element-czym-jest-RSV .p {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection-TXT-blue);
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-6 {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #05053c;
-  font-size: 24px;
-  letter-spacing: 0;
-}
-
-.element-czym-jest-RSV .element-2 {
-  top: calc(50.00% - 26px);
-  left: calc(50.00% - 29px);
-  width: 54px;
-  height: 54px;
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-4 {
-  position: absolute;
-  width: 40.53%;
-  height: 87.50%;
-  top: 6.25%;
-  left: 6.34%;
-}
-
-.element-czym-jest-RSV .vector-5 {
-  position: absolute;
-  width: 62.50%;
-  height: 87.50%;
-  top: 6.25%;
-  left: 31.25%;
-}
-
-.element-czym-jest-RSV .element-wrapper {
-  top: calc(50.00% - 26px);
-  left: calc(50.00% - 27px);
-  width: 54px;
-  height: 54px;
-  display: flex;
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .element-3 {
-  flex: 1;
-  width: 54px;
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-6 {
-  position: absolute;
-  width: 37.50%;
-  height: 37.50%;
-  top: 46.88%;
-  left: 53.12%;
-}
-
-.element-czym-jest-RSV .vector-7 {
-  position: absolute;
-  width: 93.90%;
-  height: 84.16%;
-  top: 6.25%;
-  left: 3.05%;
-}
-
-.element-czym-jest-RSV .frame-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: var(--variable-collection-blue);
-}
-
-.element-czym-jest-RSV .frame-5 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
-  padding: 44px 0px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .co-polacy-wiedz-o-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .text-wrapper-7 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  color: #ffffff;
-  font-size: 40px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .wyniki-badania {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 934px;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 24px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .frame-6 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 64px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-7 {
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
-  display: flex;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-8 {
-  display: flex;
-  align-items: flex-start;
-  padding: 0px 120px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .header-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-}
-
-.element-czym-jest-RSV .IMG-2 {
-  position: relative;
-  width: 255px;
-  height: 238px;
-}
-
-.element-czym-jest-RSV .ellipse {
+.ok-image {
   width: 200px;
   height: 200px;
-  position: absolute;
-  top: 15px;
-  left: 24px;
+  background-image: url(./img/vector-10.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.element-czym-jest-RSV .ellipse-2 {
-  width: 123px;
-  height: 199px;
-  position: absolute;
-  top: 15px;
-  left: 24px;
-}
-
-.element-czym-jest-RSV .text-wrapper-8 {
-  position: absolute;
-  top: 82px;
-  left: 72px;
-  height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 56px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .COPY-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  position: relative;
-  align-self: stretch;
+/* Sekcja stopki */
+.footer {
   width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .div-2 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .ellipse-3 {
-  position: absolute;
-  top: 33px;
-  left: 24px;
-  width: 100px;
-  height: 182px;
-}
-
-.element-czym-jest-RSV .frame-9 {
-  display: flex;
-  flex-direction: column;
-  width: 940px;
-  align-items: center;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .polygon-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 37px;
-  align-items: flex-end;
-  gap: 10px;
-  padding: 0px 193px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-}
-
-.element-czym-jest-RSV .polygon {
-  position: relative;
-  width: 71.01px;
-  height: 37.5px;
-  margin-bottom: -0.50px;
-}
-
-.element-czym-jest-RSV .frame-10 {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 44px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: var(--variable-collection-light-blue);
-  border-radius: 28px;
-}
-
-.element-czym-jest-RSV .vector-wrapper {
-  width: 64px;
-  height: 64px;
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-8 {
-  position: absolute;
-  width: 75.00%;
-  height: 90.62%;
-  top: 3.12%;
-  left: 12.50%;
-}
-
-.element-czym-jest-RSV .jednocze-nie-prawie {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Medium", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection-blue);
-  font-size: 28px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-9 {
-  font-weight: 500;
-}
-
-.element-czym-jest-RSV .text-wrapper-10 {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-}
-
-.element-czym-jest-RSV .div-3 {
-  display: flex;
-  width: 1200px;
-  align-items: center;
-  gap: 32px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .line {
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-  height: 2px;
-}
-
-.element-czym-jest-RSV .asdaddzasob {
-  position: relative;
-  width: 50px;
-  height: 48px;
-  aspect-ratio: 1.05;
-}
-
-.element-czym-jest-RSV .frame-11 {
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  height: 446px;
-}
-
-.element-czym-jest-RSV .IMG-3 {
-  position: absolute;
-  top: 0;
-  left: 120px;
-  width: 1200px;
-  height: 446px;
-  border-radius: 28px;
-  background-image: url(./img/img.png);
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-.element-czym-jest-RSV .frame-12 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 40px 104px 40px 188px;
-  position: absolute;
-  top: 159px;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 0px 200px 200px 0px;
-}
-
-.element-czym-jest-RSV .RSV-wyst-puje {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--variable-collection-TXT-blue);
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .kontakt-cz-owieka-z {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: var(--variable-collection-TXT-blue);
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .COPY-4 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 32px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-13 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 44px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .pfizer-icon-action {
-  position: relative;
-  width: 146px;
-  height: 146px;
-  transform: rotate(90deg);
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-9 {
-  position: absolute;
-  width: 87.33%;
-  height: 75.00%;
-  top: 12.59%;
-  left: 12.58%;
-  transform: rotate(-90deg);
-}
-
-.element-czym-jest-RSV .frame-14 {
-  display: flex;
-  flex-direction: column;
-  width: 623px;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-}
-
-.element-czym-jest-RSV .wyst-puj-dwie {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 32px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .mo-na-zakazi-si {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .frame-15 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 64px;
-  padding: 0px 0px 88px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-16 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 44px;
-  padding: 0px 120px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .COPY-5 {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 24px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-17 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-}
-
-.element-czym-jest-RSV .na-prze-omie {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 24px;
-  text-align: right;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-11 {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 0;
-}
-
-.element-czym-jest-RSV .wykres-wrapper {
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-  height: 324px;
-}
-
-.element-czym-jest-RSV .wykres {
-  position: relative;
-  width: 67.88%;
-  height: 102.11%;
-  left: 16.39%;
-}
-
-.element-czym-jest-RSV .vector-10 {
-  position: absolute;
-  width: 97.52%;
-  height: 81.09%;
-  top: 4.58%;
-  left: 0;
-}
-
-.element-czym-jest-RSV .text-wrapper-12 {
-  position: absolute;
-  width: 12.63%;
-  height: 5.44%;
-  top: 63.65%;
-  left: 68.09%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-90deg);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 18px;
-  white-space: nowrap;
-}
-
-.element-czym-jest-RSV .text-wrapper-13 {
-  position: absolute;
-  width: 12.88%;
-  height: 5.44%;
-  top: 63.43%;
-  left: 37.52%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-90.04deg);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 18px;
-  white-space: nowrap;
-}
-
-.element-czym-jest-RSV .element-zaka-e {
-  width: 53.73%;
-  height: 31.44%;
-  top: 0;
-  left: 17.95%;
-  color: #ffffff;
-  font-size: 65px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Pfizer Diatype-Black", Helvetica;
-  font-weight: 400;
-  text-align: right;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-14 {
-  font-weight: 900;
-}
-
-.element-czym-jest-RSV .text-wrapper-15 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.element-czym-jest-RSV .element-zaka-e-2 {
-  width: 33.43%;
-  height: 21.69%;
-  top: 54.66%;
-  left: 0;
-  color: var(--variable-collection-light-blue);
-  font-size: 40px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Pfizer Diatype-Black", Helvetica;
-  font-weight: 400;
-  text-align: right;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-16 {
-  font-weight: 900;
-  color: #ffffff;
-}
-
-.element-czym-jest-RSV .text-wrapper-17 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 16px;
-}
-
-.element-czym-jest-RSV .dane-polska-za-okres {
-  position: absolute;
-  width: 77.50%;
-  height: 13.90%;
-  top: 86.10%;
-  left: 19.93%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 16px;
-  text-align: right;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .COPY-6 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 24px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-18 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-19 {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 7px 106px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-}
-
-.element-czym-jest-RSV .frame-20 {
-  display: flex;
-  flex-direction: column;
-  width: 417px;
-  align-items: flex-start;
-  gap: 44px;
-  position: relative;
-  margin-right: -34.00px;
-}
-
-.element-czym-jest-RSV .frame-21 {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .pfizer-icon-2 {
-  position: relative;
-  width: 110px;
-  height: 110px;
-  transform: rotate(180deg);
-}
-
-.element-czym-jest-RSV .vector-11 {
-  position: absolute;
-  width: 25.00%;
-  height: 24.99%;
-  top: 46.89%;
-  left: 18.75%;
-  transform: rotate(-180deg);
-}
-
-.element-czym-jest-RSV .vector-12 {
-  position: absolute;
-  width: 86.71%;
-  height: 77.40%;
-  top: 6.58%;
-  left: 6.64%;
-  transform: rotate(-180deg);
-}
-
-.element-czym-jest-RSV .div-4 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Black", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 65px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .text-wrapper-18 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 28px;
-}
-
-.element-czym-jest-RSV .frame-22 {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .pfizer-icon-3 {
-  position: relative;
-  width: 110px;
-  height: 110px;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-13 {
-  position: absolute;
-  width: 58.59%;
-  height: 86.72%;
-  top: 6.64%;
-  left: 16.02%;
-}
-
-.element-czym-jest-RSV .vector-14 {
-  position: absolute;
-  width: 39.84%;
-  height: 39.84%;
-  top: 47.27%;
-  left: 45.70%;
-}
-
-.element-czym-jest-RSV .vector-15 {
-  position: absolute;
-  width: 5.47%;
-  height: 21.88%;
-  top: 56.25%;
-  left: 62.89%;
-}
-
-.element-czym-jest-RSV .szacuje-si-e-ka-dego {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 24px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .frame-23 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 44px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .jak-rozprzestrzenia {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--variable-collection-TXT-blue);
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .frame-24 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-25 {
-  align-items: flex-start;
-  gap: 24px;
-  display: flex;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .frame-26 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding: 24px 20px;
-  position: relative;
-  flex: 1;
-  align-self: stretch;
-  flex-grow: 1;
-  background-color: var(--variable-collection-pink);
-  border-radius: 28px;
-}
-
-.element-czym-jest-RSV .ICON {
-  position: relative;
-  width: 71.97px;
-  height: 80px;
-  aspect-ratio: 0.9;
-  background-image: url(./img/vector-16.svg);
-  background-size: 100% 100%;
-}
-
-.element-czym-jest-RSV .vector-16 {
-  position: absolute;
-  width: 27.90%;
-  height: 24.71%;
-  top: 37.45%;
-  left: 36.05%;
-}
-
-.element-czym-jest-RSV .frame-27 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .text-wrapper-19 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  color: var(--variable-collection-blue);
-  font-size: 24px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.element-czym-jest-RSV .element-4 {
-  width: 80px;
-  height: 80px;
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.element-czym-jest-RSV .vector-17 {
-  position: absolute;
-  width: 87.51%;
-  height: 90.62%;
-  top: 3.12%;
-  left: 6.25%;
-}
-
-.element-czym-jest-RSV .frame-28 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 24px 20px;
-  position: relative;
-  flex: 1;
-  flex-grow: 1;
-  background-color: var(--variable-collection-pink);
-  border-radius: 28px;
-}
-
-.element-czym-jest-RSV .vector-18 {
-  position: absolute;
-  width: 59.38%;
-  height: 34.38%;
-  top: 40.64%;
-  left: 20.31%;
-}
-
-.element-czym-jest-RSV .vector-19 {
-  position: absolute;
-  width: 81.25%;
-  height: 87.50%;
-  top: 6.25%;
-  left: 6.25%;
-}
-
-.element-czym-jest-RSV .vector-20 {
-  position: absolute;
-  width: 34.58%;
-  height: 29.06%;
-  top: 62.61%;
-  left: 43.36%;
-}
-
-.element-czym-jest-RSV .vector-21 {
-  position: absolute;
-  width: 68.56%;
-  height: 87.50%;
-  top: 4.17%;
-  left: 12.50%;
-}
-
-.element-czym-jest-RSV .vector-22 {
-  position: absolute;
-  width: 15.62%;
-  height: 15.62%;
-  top: 54.13%;
-  left: 65.43%;
-}
-
-.element-czym-jest-RSV .vector-23 {
-  position: absolute;
-  width: 34.38%;
-  height: 34.37%;
-  top: 44.79%;
-  left: 56.06%;
-}
-
-.element-czym-jest-RSV .IMG-4 {
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  height: 679.46px;
-}
-
-.element-czym-jest-RSV .section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  padding: 40px 120px 80px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
   background-color: var(--variable-collection-dark-blue);
-}
-
-.element-czym-jest-RSV .txt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-}
-
-.element-czym-jest-RSV .YOTTA-by-publicis {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: "undefined-Regular", Helvetica;
-  font-weight: 400;
   color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: normal;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.element-czym-jest-RSV .text-wrapper-20 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  color: #ffffff;
+.disclaimer, .legal-info {
   font-size: 14px;
-  letter-spacing: 0;
-  line-height: normal;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  margin: 20px 0;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Media Queries dla responsywności */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  .header-content {
+    align-items: center;
+    text-align: center;
+  }
+  .risk-group-boxes, .comparative-boxes, .symptoms-columns, .photo-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box, .box-column, .symptom-column {
+    flex-basis: 100%;
+  }
+  .photo-card.reversed {
+    flex-direction: column;
+  }
+  .main-content-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: 16px;
+  }
+  .headline, .subheadline, .section-title, .section-title-alt, .section-title-main, .section-title-secondary {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  .cta-button {
+    padding: 10px 20px;
+  }
+  .cta-text {
+    font-size: 16px;
+  }
 }
