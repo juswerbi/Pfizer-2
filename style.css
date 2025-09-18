@@ -50,7 +50,6 @@ body {
   background-color: var(--variable-collection-blue);
 }
 
-/* Zamiast background-image, teraz używamy tagu <img> w HTML */
 .header-img {
   flex: 1;
   width: 100%;
@@ -196,6 +195,13 @@ section {
 .rsv-vs-grypa-section {
   background-color: var(--variable-collection-dark-blue);
   color: #ffffff;
+  /* Usuwamy ogranicznik szerokości */
+  max-width: none;
+}
+
+.rsv-vs-grypa-section > * {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .comparative-boxes {
@@ -268,6 +274,13 @@ section {
 
 .threats-section {
   background-color: var(--variable-collection-pink);
+  /* Usuwamy ogranicznik szerokości */
+  max-width: none;
+}
+
+.threats-section > * {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .threats-text p {
@@ -311,6 +324,13 @@ section {
   background-color: var(--variable-collection-blue);
   color: #ffffff;
   padding: 60px 20px;
+  /* Usuwamy ogranicznik szerokości */
+  max-width: none;
+}
+
+.where-to-vaccinate-section > * {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .main-content-row {
@@ -329,7 +349,6 @@ section {
   max-width: 600px;
 }
 
-/* Zamiast background-image, teraz używamy tagu <img> w HTML */
 .ok-image {
   width: 200px;
   height: auto;
