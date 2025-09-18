@@ -283,31 +283,85 @@
         </div>
       </footer>
     </div>
-    <script>
+<script>
   let slideIndex = 0;
+  let isPlaying = true;
+  let slideInterval;
   const slides = document.querySelectorAll('.slider-img');
-  
-  function showSlides() {
-    // Ukrywa wszystkie slajdy
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].classList.remove('active');
-    }
-    
-    // Zwiększa indeks i wraca do 0, gdy dojdzie do końca
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    
-    // Pokazuje aktywny slajd
-    slides[slideIndex - 1].classList.add('active');
-    
-    // Wywołuje funkcję co 5 sekund
-    setTimeout(showSlides, 5000);
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const dotsContainer = document.querySelector('.slider-dots');
+
+  // Funkcja tworząca kropki
+  function createDots() {
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dotsContainer.appendChild(dot);
+      dot.addEventListener('click', () => {
+        currentSlide(index);
+        pauseSlides();
+      });
+    });
+    updateDots();
   }
-  
-  // Rozpoczyna animację
-  showSlides();
+
+  // Funkcja aktualizująca aktywną kropkę
+  function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === slideIndex);
+    });
+  }
+
+  // Funkcja pokazująca konkretny slajd
+  function currentSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slideIndex = n;
+    slides[slideIndex].classList.add('active');
+    updateDots();
+  }
+
+  // Funkcja do automatycznego przełączania slajdów
+  function autoSlide() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+    }
+    slides[slideIndex].classList.add('active');
+    updateDots();
+  }
+
+  // Funkcja do zatrzymania slidera
+  function pauseSlides() {
+    clearInterval(slideInterval);
+    isPlaying = false;
+    playPauseBtn.classList.remove('playing');
+    playPauseBtn.classList.add('paused');
+  }
+
+  // Funkcja do odtwarzania slidera
+  function playSlides() {
+    if (!isPlaying) {
+      slideInterval = setInterval(autoSlide, 5000);
+      isPlaying = true;
+      playPauseBtn.classList.remove('paused');
+      playPauseBtn.classList.add('playing');
+    }
+  }
+
+  // Obsługa przycisku play/pause
+  playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      pauseSlides();
+    } else {
+      playSlides();
+    }
+  });
+
+  // Inicjalizacja: tworzy kropki i uruchamia slider
+  createDots();
+  playSlides();
 </script>
   </body>
 </html>
