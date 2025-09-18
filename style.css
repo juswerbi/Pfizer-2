@@ -50,16 +50,15 @@ body {
   background-color: var(--variable-collection-blue);
 }
 
-/* Styl dla kontenera slidera, który zastępuje .header-img */
+/* Nowe style dla slidera, z elementami sterującymi */
 .slider-container {
   flex: 1;
   width: 100%;
   position: relative;
   min-height: 400px;
-  overflow: hidden; /* Ukrywa grafiki, które są poza widokiem */
+  overflow: hidden;
 }
 
-/* Styl dla każdej grafiki w sliderze */
 .slider-img {
   position: absolute;
   top: 0;
@@ -67,13 +66,70 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0; /* Domyślnie wszystkie grafiki są ukryte */
-  transition: opacity 1s ease-in-out; /* Płynne przejście między grafikami */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Klasa .active będzie kontrolować, która grafika jest widoczna */
 .slider-img.active {
   opacity: 1;
+}
+
+/* Przyciski sterujące (play/pause) */
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.play-pause-btn {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 0.3s;
+}
+
+.play-pause-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ikony tła dla przycisku - musisz mieć własne pliki SVG */
+.play-pause-btn.playing {
+  background-image: url('img/pause-icon.svg'); /* Zmień na ścieżkę do Twojej ikony pauzy */
+}
+
+.play-pause-btn.paused {
+  background-image: url('img/play-icon.svg'); /* Zmień na ścieżkę do Twojej ikony odtwarzania */
+}
+
+/* Kropki wskaźnika slajdów */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% + 40px);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #ffffff;
 }
 
 .header-content {
