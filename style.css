@@ -586,16 +586,6 @@ a {
   font-weight: 700;
 }
 
-
-/* Nowe reguły dla mobilnej wersji menu */
-.navi.mobile-active .navbar {
-  display: none;
-}
-
-.navi.mobile-active .hamburger-menu {
-  display: flex;
-}
-
 /* Układ menu hamburgerowego */
 .navbar.active {
   display: flex;
@@ -618,6 +608,24 @@ a {
 
 .navbar.active .text-wrapper {
   color: #fff;
+}
+
+/* Nowe reguły dla mobilnej wersji menu */
+.navi.mobile-active .navbar {
+  display: none;
+}
+
+.navi.mobile-active .hamburger-menu {
+  display: flex;
+}
+
+.navi.desktop-active .navbar {
+  display: flex;
+}
+
+/* Reguła zapobiegająca migotaniu (flash of unstyled content) */
+.navi.fouc-hide .navbar {
+  visibility: hidden;
 }
 
 /* Media Query dla układu strony na mniejszych ekranach */
