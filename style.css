@@ -48,8 +48,8 @@ a {
 
 .navi {
   height: 150px;
-  justify-content: space-between; /* Wyrównanie do lewej i prawej */
-  padding: 20px 120px; /* Zwiększony padding */
+  justify-content: space-between;
+  padding: 32px 120px; /* Zaktualizowany padding góra/dół */
   background-color: var(--variable-collection-dark-blue);
   flex-wrap: wrap;
 }
@@ -65,7 +65,7 @@ a {
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 21px;
-  text-align: center;
+  text-align: left; /* Wyrównanie tekstu do lewej */
 }
 
 .primary-button {
@@ -345,192 +345,4 @@ a {
 }
 
 .box-2 .div-2 .text-wrapper-7,
-.box-3 .div-2 .text-wrapper-7 {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-}
-
-.section-3 {
-  padding: 40px 120px;
-  gap: 70px;
-}
-
-.HL-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-3 .text-wrapper-10 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.column {
-  display: flex;
-  justify-content: center;
-  gap: 200px;
-  width: 100%;
-}
-
-.column .div-3 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  width: 385px;
-}
-
-.HL-wrapper {
-  padding: 40px 120px;
-  gap: 70px;
-  background-color: var(--variable-collection-pink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.HL-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-4 .hospitalizacja-cho {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.HL-4 .szczepionka-zalecana {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.photo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.photo .IMG-2,
-.photo .IMG-3 {
-  width: 584px;
-  height: 339px;
-  background-size: cover;
-  background-position: center;
-}
-
-.photo .IMG-2 {
-  background-image: url(./img/img-1.png);
-}
-
-.photo .IMG-3 {
-  background-image: url(./img/img-2.png);
-}
-
-.photo .copy-2 {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 60px;
-  flex: 1;
-}
-
-.photo .copy-2 .text-wrapper-11,
-.photo .copy-2 .kobiety-w-ci-y {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.section-4 {
-  padding: 40px 120px;
-  gap: 20px;
-  background-color: var(--variable-collection-blue);
-}
-
-.div-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-}
-
-.section-4 .text-wrapper-12 {
-  color: var(--variable-collection-light-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.section-4 .p {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-}
-
-.TXT-3 {
-  display: inline-flex;
-  justify-content: center;
-  gap: 60px;
-}
-
-.TXT-3 .zadbaj-o-swoje {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
-  width: 518px;
-  height: 193px;
-}
-
-.TXT-3 .OK {
-  width: 336px;
-  height: 293px;
-  background-image: url(./img/vector-10.svg);
-  background-size: cover;
-}
-
-.section-5 {
-  padding: 40px 120px 80px;
-  gap: 60px;
-  background-color: var(--variable-collection-dark-blue);
-}
-
-.section-5 .div-4 {
-  gap: 15px;
-}
-
-.section-5 .div-5 {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 14px;
-  width: 100%;
-}
-
-.section-5 .div-5 .text-wrapper-14 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-}
+.box-3 .div-2 .text-wrapper
