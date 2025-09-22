@@ -26,11 +26,12 @@ a {
   text-decoration: none;
 }
 
-.desktop {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
+  width: 100%;
 }
 
 .navi,
@@ -43,427 +44,297 @@ a {
   display: flex;
   width: 100%;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .navi {
-  height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 40px 120px;
+  background-color: var(--variable-collection-light-blue);
   justify-content: space-between;
-  padding: 32px 120px;
-  background-color: var(--variable-collection-dark-blue);
-  flex-wrap: wrap;
 }
 
 .navbar {
   display: flex;
+  gap: 20px;
   align-items: center;
-  gap: 37px;
-  justify-content: flex-start;
 }
 
-.navbar .text-wrapper {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 21px;
-  text-align: left;
-  display: block;
+.text-wrapper {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
 }
 
 .primary-button {
-  all: unset;
-  display: flex;
-  width: auto;
+  background-color: var(--variable-collection-blue);
+  border-radius: 8px;
+  display: inline-flex;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 15px 30px;
-  background-color: var(--variable-collection-yellow);
-  border-radius: 1000px;
-  cursor: pointer;
 }
 
-.primary-button .text {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
+.text {
+  color: #fff;
+  font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 20px;
-  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .header {
-  height: 500px;
-  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 0 120px;
+  position: relative;
+  background-color: var(--variable-collection-pink);
   justify-content: space-between;
-  background-color: var(--variable-collection-dark-blue);
-  flex-direction: row;
 }
 
-.header .IMG {
-  flex: 1;
-  background-image: url(./img/img.png);
+.IMG {
+  background-image: url("https://generated-images.com/image-3.jpg");
+  background-position: 50% 50%;
   background-size: cover;
-  background-position: center;
+  flex-grow: 1;
+  height: 100vh;
 }
 
-.header .COPY {
-  flex: 1;
+.COPY {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 43px;
-  padding: 20px 120px 0 60px;
-  background-color: var(--variable-collection-blue);
+  gap: 30px;
+  padding: 80px 0;
 }
 
-.header .HL {
+.HL {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 100px 0 0;
+  gap: 20px;
 }
 
-.header .HL .div,
-.header .HL .tak-e-tych-bezp {
-  color: #fff;
+.div {
+  color: var(--variable-collection-dark-blue);
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
 }
 
-.header .HL .div {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 34px;
-}
-
-.header .HL .tak-e-tych-bezp {
+.tak-e-tych-bezp {
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 28px;
-  margin-top: -10px;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
 }
 
 .button-wrapper {
   display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.CTA {
-  all: unset;
-  display: flex;
-  width: 500px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 30px;
-  background-color: var(--variable-collection-yellow);
-  border-radius: 1000px;
-  cursor: pointer;
-}
-
-.CTA .informacje-o {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  text-align: center;
-}
-
-.section {
-  padding: 40px 120px 60px;
-}
-
-.czym-jest-RSV-wrapper,
-.kto-jest-w-grupie-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 10px 0;
-}
-
-.czym-jest-RSV,
-.kto-jest-w-grupie {
-  color: #000;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.copy {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.copy .separator {
-  width: 30px;
-  height: 122px;
-}
-
-.copy .icon {
-  width: 109px;
-  display: flex;
-  justify-content: center;
-}
-
-.copy .TXT {
-  display: flex;
-  width: 997px;
-  justify-content: center;
-  align-items: center;
-}
-
-.copy .RSV-to-powszechny-i {
-  color: #000;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.boxes {
-  display: flex;
-  justify-content: space-between;
-  width: 1200px;
-  flex-wrap: wrap;
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
-.box .element {
-  width: 330px;
-  height: 120px;
-}
-
-.box .div-wrapper,
-.box .TXT-2 {
-  display: flex;
-  justify-content: center;
+.primary-button-1 {
+  background-color: var(--variable-collection-blue);
+  border-radius: 8px;
+  display: inline-flex;
+  padding: 10px 20px;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.box .seniorzy-powy-ej,
-.box .text-wrapper-2 {
-  color: #000;
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
+.secondary-button-2 {
+  background-color: transparent;
+  border: 1px solid var(--variable-collection-blue);
+  border-radius: 8px;
+  display: inline-flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text-2 {
+  color: var(--variable-collection-blue);
+  font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.section {
+  padding: 80px 120px;
+  gap: 20px;
+}
+
+.overlap-group-wrapper {
+  width: 100%;
+}
+
+.overlap-group {
+  background-color: var(--variable-collection-pink);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.text-wrapper-3 {
+  color: var(--variable-collection-dark-blue);
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-wrapper-4,
+.text-wrapper-5 {
+  color: #000;
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.secondary-button-3 {
+  background-color: transparent;
+  border: 1px solid var(--variable-collection-blue);
+  border-radius: 8px;
+  display: inline-flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .section-2 {
   padding: 40px 120px;
-  gap: 60px;
-  background-color: var(--variable-collection-dark-blue);
-}
-
-.HL-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.HL-2 .RSV-a {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 40px;
-  text-align: center;
-}
-
-.HL-2 .RSV-a .text-wrapper-3 {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-style: italic;
-  color: var(--variable-collection-light-blue);
-}
-
-.HL-2 .RSV-a .text-wrapper-4 {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-style: italic;
-  color: #fff;
-}
-
-.HL-2 .p {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.boxes-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px;
-}
-
-.left,
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-.left {
-  width: 589px;
-}
-
-.box-2 {
-  display: flex;
-  align-items: flex-start;
   gap: 20px;
-  padding: 0 10px;
 }
 
-.box-3 {
+.frame-2 {
   display: flex;
-  align-items: flex-start;
-  gap: 120px;
-  padding: 0 10px;
+  justify-content: center;
+  gap: 40px;
 }
 
-.box-2 .div-2,
-.box-3 .div-2 {
-  color: #fff;
-  font-size: 24px;
-  line-height: 24px;
+.mask-group {
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
 }
 
-.box-2 .div-2 .text-wrapper-6,
-.box-3 .div-2 .text-wrapper-6 {
+.div-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text-wrapper-6 {
+  color: var(--variable-collection-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
+  font-size: 40px;
 }
 
-.box-2 .div-2 .text-wrapper-7,
-.box-3 .div-2 .text-wrapper-7 {
+.overlap-group-2 {
+  position: relative;
+}
+
+.text-wrapper-7 {
+  color: #000;
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
+  font-size: 16px;
+}
+
+.image-with-text-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.image-with-text {
+  max-width: 100%;
+  height: auto;
 }
 
 .section-3 {
   padding: 40px 120px;
-  gap: 70px;
-}
-
-.HL-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 40px;
-  width: 100%;
+  background-color: var(--variable-collection-pink);
+  flex-direction: column;
 }
 
-.HL-3 .text-wrapper-10 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
+.text-wrapper-8 {
+  color: var(--variable-collection-dark-blue);
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
   font-size: 40px;
   text-align: center;
 }
 
-.column {
+.TXT {
   display: flex;
+  gap: 20px;
   justify-content: center;
-  gap: 200px;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
-.column .div-3 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  width: 385px;
-}
-
-.HL-wrapper {
-  padding: 40px 120px;
-  gap: 70px;
-  background-color: var(--variable-collection-pink);
+.frame-3 {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.HL-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-4 .hospitalizacja-cho {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.HL-4 .szczepionka-zalecana {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.photo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.photo .IMG-2,
-.photo .IMG-3 {
-  width: 584px;
-  height: 339px;
-  background-size: cover;
-  background-position: center;
-}
-
-.photo .IMG-2 {
-  background-image: url(./img/img-1.png);
-}
-
-.photo .IMG-3 {
-  background-image: url(./img/img-2.png);
-}
-
-.photo .copy-2 {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 60px;
+  gap: 10px;
   flex: 1;
 }
 
-.photo .copy-2 .text-wrapper-11,
-.photo .copy-2 .kobiety-w-ci-y {
-  color: var(--variable-collection-TXT-blue);
+.div-wrapper {
+  display: flex;
+}
+
+.text-wrapper-9 {
+  color: var(--variable-collection-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 24px;
+}
+
+.text-wrapper-10 {
+  color: #000;
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .section-4 {
@@ -480,8 +351,40 @@ a {
   width: 100%;
 }
 
-.section-4 .text-wrapper-12 {
-  color: var(--variable-collection-light-blue);
+.frame-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-wrapper-11 {
+  color: #fff;
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+}
+
+.primary-button-4 {
+  background-color: var(--variable-collection-yellow);
+  border-radius: 8px;
+  display: inline-flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-5 {
+  padding: 40px 120px;
+  gap: 20px;
+  background-color: var(--variable-collection-light-blue);
+  flex-direction: column;
+}
+
+.text-wrapper-12 {
+  color: var(--variable-collection-blue);
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-weight: 400;
   font-style: italic;
@@ -489,12 +392,38 @@ a {
   text-align: center;
 }
 
-.section-4 .p {
+.p {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 24px;
   text-align: center;
+}
+
+.TXT-2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.frame-wrapper {
+  flex: 1;
+}
+
+.input-3 {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.primary-button-5 {
+  background-color: var(--variable-collection-blue);
+  border-radius: 8px;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .TXT-3 {
@@ -503,42 +432,141 @@ a {
   gap: 60px;
 }
 
-.TXT-3 .zadbaj-o-swoje {
+.zadbaj-o-swoje {
   color: #fff;
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
-  width: 518px;
-  height: 193px;
+  font-size: 16px;
+  text-align: center;
 }
 
-.TXT-3 .OK {
-  width: 336px;
-  height: 293px;
-  background-image: url(./img/vector-10.svg);
-  background-size: cover;
-}
-
-.section-5 {
-  padding: 40px 120px 80px;
-  gap: 60px;
+.footer {
+  padding: 40px 120px;
+  gap: 20px;
   background-color: var(--variable-collection-dark-blue);
 }
 
-.section-5 .div-4 {
-  gap: 15px;
-}
-
-.section-5 .div-5 {
+.div-6 {
   color: #fff;
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.div-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   width: 100%;
 }
 
-.section-5 .div-5 .text-wrapper-14 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
+.div-5 {
+  color: #fff;
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Nowy kod dla responsywności (Media Queries) */
+@media only screen and (max-width: 768px) {
+  .navi {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .primary-button {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .header {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+  .IMG {
+    display: none; /* Ukrywamy duże tło na małych ekranach */
+  }
+  .COPY {
+    align-items: center;
+    text-align: center;
+  }
+  .HL {
+    align-items: center;
+    text-align: center;
+  }
+  .div {
+    font-size: 28px;
+  }
+  .tak-e-tych-bezp {
+    font-size: 14px;
+  }
+  .button-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+  .primary-button-1, .secondary-button-2 {
+    width: 100%;
+  }
+  .section, .section-2, .section-3, .section-4, .section-5, .footer {
+    padding: 20px;
+  }
+  .frame-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mask-group {
+    max-width: 100%;
+  }
+  .div-2 {
+    text-align: center;
+  }
+  .text-wrapper-6 {
+    font-size: 28px;
+  }
+  .TXT {
+    flex-direction: column;
+  }
+  .text-wrapper-8 {
+    font-size: 28px;
+  }
+  .frame-3 {
+    width: 100%;
+  }
+  .div-4 {
+    gap: 15px;
+  }
+  .text-wrapper-11 {
+    font-size: 28px;
+  }
+  .text-wrapper-12 {
+    font-size: 28px;
+  }
+  .p {
+    font-size: 18px;
+  }
+  .TXT-2 {
+    flex-direction: column;
+    width: 100%;
+  }
+  .frame-wrapper {
+    width: 100%;
+  }
+  .input-3 {
+    width: 100%;
+  }
+  .primary-button-5 {
+    width: 100%;
+  }
+  .TXT-3 {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
