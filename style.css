@@ -55,12 +55,19 @@ a {
   padding: 40px 120px;
   background-color: var(--variable-collection-light-blue);
   justify-content: space-between;
+  /* Włączamy elastyczne zawijanie dla całej nawigacji */
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .navbar {
   display: flex;
   gap: 20px;
   align-items: center;
+  /* Pozwalamy na zawijanie elementów menu */
+  flex-wrap: wrap;
+  /* Dodano min-width aby elementy się nie kurczyły za bardzo */
+  min-width: 0;
 }
 
 .text-wrapper {
@@ -70,6 +77,9 @@ a {
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
+  /* Użycie flex-shrink, aby linki mogły się kurczyć, jeśli brakuje miejsca */
+  flex-shrink: 1;
+  white-space: nowrap;
 }
 
 .primary-button {
@@ -82,6 +92,9 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  /* Pozwalamy przyciskowi na zawinięcie do nowej linii, jeśli zabraknie miejsca */
+  flex-shrink: 0;
+  min-width: fit-content;
 }
 
 .text {
@@ -470,6 +483,12 @@ a {
 }
 
 /* Nowy kod dla responsywności (Media Queries) */
+@media only screen and (max-width: 1200px) {
+  .navi {
+    padding: 20px 40px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .navi {
     flex-direction: column;
@@ -492,7 +511,7 @@ a {
     text-align: center;
   }
   .IMG {
-    display: none; /* Ukrywamy duże tło na małych ekranach */
+    display: none;
   }
   .COPY {
     align-items: center;
