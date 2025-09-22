@@ -9,7 +9,7 @@
     <div class="desktop">
       <nav class="navi">
         <div class="navbar" id="navbarNav">
-          <a href="#" class="text-wrapper">O szczepieniu-10</a>
+          <a href="#" class="text-wrapper">O szczepieniu-11</a>
           <a href="#" class="text-wrapper">Dla kogo?</a>
           <a href="#" class="text-wrapper">RSV a grypa</a>
           <a href="#" class="text-wrapper">Objawy i powikłania</a>
@@ -294,7 +294,6 @@
       const hamburger = document.getElementById('hamburgerButton');
       const primaryButton = document.querySelector('.primary-button');
 
-      // Funkcja, która sprawdza, czy menu się zawija
       const checkWrapping = () => {
         if (!navbar) return;
         const navHeight = navbar.getBoundingClientRect().height;
@@ -302,29 +301,34 @@
         if (!firstLink) return;
         const firstLinkHeight = firstLink.getBoundingClientRect().height;
         
-        // Jeśli wysokość kontenera navbar jest większa niż pojedyncza linia, oznacza to zawijanie.
-        if (navHeight > (firstLinkHeight + 10)) { // Dodatkowy margines, aby uniknąć błędów
+        if (navHeight > (firstLinkHeight + 10)) {
           navi.classList.add('mobile-active');
+          navi.classList.remove('desktop-active');
         } else {
           navi.classList.remove('mobile-active');
-          navbar.classList.remove('active'); // Ukrywamy menu, jeśli wraca do jednej linii
+          navi.classList.add('desktop-active');
+          navbar.classList.remove('active');
           hamburger.classList.remove('active');
         }
       };
 
-      // Zdarzenie kliknięcia w przycisk hamburgera
       hamburger.addEventListener('click', () => {
         navbar.classList.toggle('active');
         hamburger.classList.toggle('active');
       });
 
-      // Używamy ResizeObserver, aby sprawdzać zmiany rozmiaru w czasie rzeczywistym
       const observer = new ResizeObserver(checkWrapping);
-      observer.observe(navi); // Obserwujemy kontener nawigacji
+      observer.observe(navi);
       
-      // Dodatkowo sprawdzamy przy starcie
-      document.addEventListener('DOMContentLoaded', checkWrapping);
-      window.addEventListener('load', checkWrapping);
+      document.addEventListener('DOMContentLoaded', () => {
+        checkWrapping();
+        // Natychmiast po załadowaniu DOM, sprawdzamy układ
+        // i usuwamy 'flash-of-unstyled-content' klasę, jeśli istnieje
+        navi.classList.remove('fouc-hide');
+      });
+
+      // Dodajemy klasę, która domyślnie ukrywa menu, aby uniknąć migotania
+      navi.classList.add('fouc-hide');
     </script>
   </body>
 </html>
