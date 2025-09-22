@@ -2,7 +2,7 @@
 
 /* Wczytywanie czcionek, jeśli są dostępne lokalnie lub z URL */
 @font-face {
-  font-family: "Pfizer Diatype-Regular";
+  font-family: "arial-Regular";
   src: url("https://anima-uploads.s3.amazonaws.com/projects/6099ea3c4d108f077501c465/fonts/augusta.ttf") format("truetype");
 }
 
@@ -25,7 +25,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  font-family: "arial", Helvetica, sans-serif;
   line-height: 1.6;
   color: var(--variable-collection-TXT-blue);
   font-size: clamp(1rem, 2vw, 1.15rem);
@@ -151,13 +151,13 @@ section {
 
 .header .HL .div {
   color: #fff;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  font-family: "arial", Helvetica;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .header .HL .tak-e-tych-bezp {
   color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-family: "arial", Helvetica;
   font-size: clamp(1.2rem, 3vw, 1.75rem);
   margin-top: -10px;
 }
