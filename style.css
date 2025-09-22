@@ -47,7 +47,7 @@ a {
 }
 
 .navi {
-  height: 100px;
+  height: 150px; /* Zwiększona wysokość */
   justify-content: space-around;
   padding: 0 120px;
   background-color: var(--dark-blue);
@@ -65,6 +65,27 @@ a {
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 21px;
+  text-align: center;
+}
+
+.primary-button {
+  all: unset;
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px; /* Dostosowane padding */
+  background-color: var(--yellow);
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.primary-button .text {
+  color: var(--txt-blue);
+  font-family: "Pfizer Diatype-Heavy", Helvetica;
+  font-weight: 400;
+  font-size: 20px;
   text-align: center;
 }
 
