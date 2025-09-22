@@ -7,9 +7,9 @@
   </head>
   <body>
     <div class="desktop">
-      <nav class="navi">
+      <nav class="navi fouc-hide">
         <div class="navbar" id="navbarNav">
-          <a href="#" class="text-wrapper">O szczepieniu-11</a>
+          <a href="#" class="text-wrapper">O szczepieniu-12</a>
           <a href="#" class="text-wrapper">Dla kogo?</a>
           <a href="#" class="text-wrapper">RSV a grypa</a>
           <a href="#" class="text-wrapper">Objawy i powikłania</a>
@@ -321,14 +321,10 @@
       observer.observe(navi);
       
       document.addEventListener('DOMContentLoaded', () => {
-        checkWrapping();
-        // Natychmiast po załadowaniu DOM, sprawdzamy układ
-        // i usuwamy 'flash-of-unstyled-content' klasę, jeśli istnieje
+        // Usuwamy klasę ukrywającą menu, gdy strona jest gotowa do wyświetlenia
         navi.classList.remove('fouc-hide');
+        checkWrapping();
       });
-
-      // Dodajemy klasę, która domyślnie ukrywa menu, aby uniknąć migotania
-      navi.classList.add('fouc-hide');
     </script>
   </body>
 </html>
