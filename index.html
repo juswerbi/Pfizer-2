@@ -9,7 +9,7 @@
     <div class="desktop">
       <nav class="navi">
         <div class="navbar" id="navbarNav">
-          <a href="#" class="text-wrapper">O szczepieniu-9</a>
+          <a href="#" class="text-wrapper">O szczepieniu-10</a>
           <a href="#" class="text-wrapper">Dla kogo?</a>
           <a href="#" class="text-wrapper">RSV a grypa</a>
           <a href="#" class="text-wrapper">Objawy i powikłania</a>
@@ -263,4 +263,68 @@
             <span class="text-wrapper-13"
               >1. CDC. Clinical Overview of RSV. https://www.cdc.gov/rsv/hcp/clinical-overview/index.html (dostęp:
               15.04.2025). 2. Hämäläinen A et al. BMJ Open. 2022 Dec 19;12(12):e060805. 3. Descamps A et al. Eur
-              Respir J. 2022;59(3):2100651. 4. Ackerson B et al. Clin Infect Dis. 201
+              Respir J. 2022;59(3):2100651. 4. Ackerson B et al. Clin Infect Dis. 2019;69(2):197-203. 5. CDC.
+              Symptoms and Care of RSV. https://www.cdc.gov/rsv/symptoms/ index.html (dostęp: 15.04.2025). 6. De
+              Martino JK et al. Open Forum Infect Dis. 2023;10(5):ofad203. 7. Savic M et al. Influenza Other Respir
+              Viruses 2023;17:e13031.</span>
+          </p>
+        </div>
+        <div class="div-4">
+          <p class="div-5">
+            Regulamin &nbsp; Nota prawna &nbsp; Polityka ciasteczek &nbsp; Polityka prywatności
+          </p>
+        </div>
+        <div class="div-4">
+          <p class="div-5">
+            Niniejszym informujemy, że serwis www.szczepieniaRSV.pl, w żadnym przypadku nie został stworzony w celu
+            udzielania porad ani konsultacji medycznych. Zastrzegamy równocześnie, że wszelkie informacje
+            przekazywane za pośrednictwem serwisu internetowego www.szczepieniaRSV.pl mają wyłącznie charakter
+            informacyjny i nie mogą zastępować fachowej porady udzielonej przez lekarza. Copyright © 2025 by
+            Pfizer Polska. All rights reserved. PP-FSM-POL-0378 Pfizer Polska Sp. z o.o. ul. Żwirki i Wigury 16B,
+            02-092 Warszawa Sąd Rejonowy dla m.st. Warszawy | KRS: 0000022310 NIP: 5213115586 | Wysokość kapitału
+            zakładowego: 33.860.000,00 zł BDO: 000189470 tel.: (22) 335 61 00, faks: (22) 335 61 11,
+            warsaw.office@pfizer.com
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const navi = document.querySelector('.navi');
+      const navbar = document.getElementById('navbarNav');
+      const hamburger = document.getElementById('hamburgerButton');
+      const primaryButton = document.querySelector('.primary-button');
+
+      // Funkcja, która sprawdza, czy menu się zawija
+      const checkWrapping = () => {
+        if (!navbar) return;
+        const navHeight = navbar.getBoundingClientRect().height;
+        const firstLink = navbar.querySelector('.text-wrapper');
+        if (!firstLink) return;
+        const firstLinkHeight = firstLink.getBoundingClientRect().height;
+        
+        // Jeśli wysokość kontenera navbar jest większa niż pojedyncza linia, oznacza to zawijanie.
+        if (navHeight > (firstLinkHeight + 10)) { // Dodatkowy margines, aby uniknąć błędów
+          navi.classList.add('mobile-active');
+        } else {
+          navi.classList.remove('mobile-active');
+          navbar.classList.remove('active'); // Ukrywamy menu, jeśli wraca do jednej linii
+          hamburger.classList.remove('active');
+        }
+      };
+
+      // Zdarzenie kliknięcia w przycisk hamburgera
+      hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+
+      // Używamy ResizeObserver, aby sprawdzać zmiany rozmiaru w czasie rzeczywistym
+      const observer = new ResizeObserver(checkWrapping);
+      observer.observe(navi); // Obserwujemy kontener nawigacji
+      
+      // Dodatkowo sprawdzamy przy starcie
+      document.addEventListener('DOMContentLoaded', checkWrapping);
+      window.addEventListener('load', checkWrapping);
+    </script>
+  </body>
+</html>
