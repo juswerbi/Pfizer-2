@@ -47,9 +47,9 @@ a {
 }
 
 .navi {
-  height: 150px; /* Zwiększona wysokość */
-  justify-content: space-around;
-  padding: 0 120px;
+  height: 150px;
+  justify-content: space-between; /* Wyrównanie do lewej i prawej */
+  padding: 20px 120px; /* Zwiększony padding */
   background-color: var(--variable-collection-dark-blue);
   flex-wrap: wrap;
 }
