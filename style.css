@@ -31,7 +31,7 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  width: 100%;
+  width: 100%; /* Upewniamy się, że .desktop zajmuje całą szerokość */
 }
 
 .navi,
@@ -44,69 +44,65 @@ a {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .navi {
-  position: fixed;
+  position: fixed; /* Zmienione na fixed, aby nawigacja była zawsze widoczna */
   top: 0;
   left: 0;
   z-index: 10;
-  padding: 40px 120px;
-  background-color: var(--variable-collection-light-blue);
+  min-height: 100px; /* Zapewniamy minimalną wysokość, aby uniknąć błędów renderowania */
   justify-content: space-between;
+  padding: 32px 120px;
+  background-color: var(--variable-collection-dark-blue);
   flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: row; /* Domyślny układ to wiersz */
 }
 
 .navbar {
   display: flex;
-  gap: 20px;
   align-items: center;
-  flex-wrap: wrap;
-  min-width: 0;
+  gap: 37px;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* Pozwalamy linkom na zawijanie się */
+  transition: all 0.3s ease-in-out;
 }
 
-.text-wrapper {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-  flex-shrink: 1;
-  white-space: nowrap;
+.navbar .text-wrapper {
+  color: #fff;
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 21px;
+  text-align: left;
+  display: block;
 }
 
 .primary-button {
-  background-color: var(--variable-collection-blue);
-  border-radius: 8px;
-  display: inline-flex;
-  padding: 10px 20px;
-  position: relative;
-  overflow: hidden;
+  all: unset;
+  display: flex;
+  width: auto;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  flex-shrink: 0;
-  min-width: fit-content;
+  padding: 15px 30px;
+  background-color: var(--variable-collection-yellow);
+  border-radius: 1000px;
+  cursor: pointer;
+  flex-shrink: 0; /* Zapewnia, że przycisk się nie kurczy */
 }
 
-.text {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
+.primary-button .text {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-Heavy", Helvetica;
   font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: relative;
-  width: fit-content;
-  white-space: nowrap;
+  font-size: 20px;
+  text-align: center;
 }
 
 /* Style for the hamburger button, initially hidden */
 .hamburger-menu {
-  display: none; /* Ukrywamy przycisk na dużych ekranach */
+  display: none; /* Domyślnie ukryty */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -121,7 +117,7 @@ a {
 .bar {
   width: 100%;
   height: 3px;
-  background-color: var(--variable-collection-blue);
+  background-color: #fff;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
@@ -139,244 +135,378 @@ a {
 }
 
 .header {
-  min-height: 100vh;
-  padding: 0 120px;
-  position: relative;
-  background-color: var(--variable-collection-pink);
+  height: 500px;
+  flex-wrap: wrap;
   justify-content: space-between;
+  background-color: var(--variable-collection-dark-blue);
+  flex-direction: row;
 }
 
-.IMG {
-  background-image: url("https://generated-images.com/image-3.jpg");
-  background-position: 50% 50%;
+.header .IMG {
+  flex: 1;
+  background-image: url(./img/img.png);
   background-size: cover;
-  flex-grow: 1;
-  height: 100vh;
+  background-position: center;
 }
 
-.COPY {
+.header .COPY {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 80px 0;
+  align-items: flex-start;
+  gap: 43px;
+  padding: 20px 120px 0 60px;
+  background-color: var(--variable-collection-blue);
 }
 
-.HL {
+.header .HL {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 100px 0 0;
 }
 
-.div {
-  color: var(--variable-collection-dark-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 48px;
-  letter-spacing: 0;
-  line-height: normal;
+.header .HL .div,
+.header .HL .tak-e-tych-bezp {
+  color: #fff;
 }
 
-.tak-e-tych-bezp {
-  color: var(--variable-collection-TXT-blue);
+.header .HL .div {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 34px;
+}
+
+.header .HL .tak-e-tych-bezp {
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
+  font-size: 28px;
+  margin-top: -10px;
 }
 
 .button-wrapper {
   display: flex;
-  gap: 20px;
-}
-
-.primary-button-1 {
-  background-color: var(--variable-collection-blue);
-  border-radius: 8px;
-  display: inline-flex;
-  padding: 10px 20px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.secondary-button-2 {
-  background-color: transparent;
-  border: 1px solid var(--variable-collection-blue);
-  border-radius: 8px;
-  display: inline-flex;
-  padding: 10px 20px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.text-2 {
-  color: var(--variable-collection-blue);
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.section {
-  padding: 80px 120px;
-  gap: 20px;
-}
-
-.overlap-group-wrapper {
+  justify-content: flex-start;
   width: 100%;
 }
 
-.overlap-group {
-  background-color: var(--variable-collection-pink);
-  border-radius: 12px;
-  padding: 20px;
+.CTA {
+  all: unset;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.div-3 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.text-wrapper-3 {
-  color: var(--variable-collection-dark-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 40px;
-}
-
-.frame {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.text-wrapper-4,
-.text-wrapper-5 {
-  color: #000;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.secondary-button-3 {
-  background-color: transparent;
-  border: 1px solid var(--variable-collection-blue);
-  border-radius: 8px;
-  display: inline-flex;
-  padding: 10px 20px;
+  width: 500px;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 20px 30px;
+  background-color: var(--variable-collection-yellow);
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.CTA .informacje-o {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-Heavy", Helvetica;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+.section {
+  padding: 40px 120px 60px;
+}
+
+.czym-jest-RSV-wrapper,
+.kto-jest-w-grupie-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.czym-jest-RSV,
+.kto-jest-w-grupie {
+  color: #000;
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+}
+
+.copy {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.copy .separator {
+  width: 30px;
+  height: 122px;
+}
+
+.copy .icon {
+  width: 109px;
+  display: flex;
+  justify-content: center;
+}
+
+.copy .TXT {
+  display: flex;
+  width: 997px;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy .RSV-to-powszechny-i {
+  color: #000;
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box .element {
+  width: 330px;
+  height: 120px;
+}
+
+.box .div-wrapper,
+.box .TXT-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.box .seniorzy-powy-ej,
+.box .text-wrapper-2 {
+  color: #000;
+  font-family: "Pfizer Diatype-Heavy", Helvetica;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
 }
 
 .section-2 {
   padding: 40px 120px;
-  gap: 20px;
+  gap: 60px;
+  background-color: var(--variable-collection-dark-blue);
 }
 
-.frame-2 {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.mask-group {
-  max-width: 50%;
-  height: auto;
-  object-fit: contain;
-}
-
-.div-2 {
+.HL-2 {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
 }
 
-.text-wrapper-6 {
-  color: var(--variable-collection-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 40px;
-}
-
-.overlap-group-2 {
-  position: relative;
-}
-
-.text-wrapper-7 {
-  color: #000;
+.HL-2 .RSV-a {
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 16px;
-}
-
-.image-with-text-wrapper {
-  width: 100%;
+  font-size: 40px;
   text-align: center;
 }
 
-.image-with-text {
-  max-width: 100%;
-  height: auto;
+.HL-2 .RSV-a .text-wrapper-3 {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  font-style: italic;
+  color: var(--variable-collection-light-blue);
+}
+
+.HL-2 .RSV-a .text-wrapper-4 {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  font-style: italic;
+  color: #fff;
+}
+
+.HL-2 .p {
+  color: #fff;
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  width: 844px;
+}
+
+.boxes-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.left {
+  width: 589px;
+}
+
+.box-2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.box-3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+  padding: 0 10px;
+}
+
+.box-2 .div-2,
+.box-3 .div-2 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.box-2 .div-2 .text-wrapper-6,
+.box-3 .div-2 .text-wrapper-6 {
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.box-2 .div-2 .text-wrapper-7,
+.box-3 .div-2 .text-wrapper-7 {
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
 }
 
 .section-3 {
   padding: 40px 120px;
-  gap: 40px;
-  background-color: var(--variable-collection-pink);
-  flex-direction: column;
+  gap: 70px;
 }
 
-.text-wrapper-8 {
-  color: var(--variable-collection-dark-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
+.HL-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.HL-3 .text-wrapper-10 {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
   font-size: 40px;
   text-align: center;
 }
 
-.TXT {
+.column {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 200px;
+  width: 100%;
 }
 
-.frame-3 {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 30px;
+.column .div-3 {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 400;
+  font-size: 24px;
+  width: 385px;
+}
+
+.HL-wrapper {
+  padding: 40px 120px;
+  gap: 70px;
+  background-color: var(--variable-collection-pink);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex: 1;
+  align-items: center;
+  width: 100%;
 }
 
-.div-wrapper {
+.HL-4 {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
 }
 
-.text-wrapper-9 {
-  color: var(--variable-collection-blue);
+.HL-4 .hospitalizacja-cho {
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 24px;
 }
 
-.text-wrapper-10 {
-  color: #000;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 16px;
+.HL-4 .szczepionka-zalecana {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  width: 844px;
+}
+
+.photo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.photo .IMG-2,
+.photo .IMG-3 {
+  width: 584px;
+  height: 339px;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo .IMG-2 {
+  background-image: url(./img/img-1.png);
+}
+
+.photo .IMG-3 {
+  background-image: url(./img/img-2.png);
+}
+
+.photo .copy-2 {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 60px;
+  flex: 1;
+}
+
+.photo .copy-2 .text-wrapper-11,
+.photo .copy-2 .kobiety-w-ci-y {
+  color: var(--variable-collection-TXT-blue);
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .section-4 {
@@ -393,40 +523,8 @@ a {
   width: 100%;
 }
 
-.frame-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.text-wrapper-11 {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 40px;
-  text-align: center;
-}
-
-.primary-button-4 {
-  background-color: var(--variable-collection-yellow);
-  border-radius: 8px;
-  display: inline-flex;
-  padding: 10px 20px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.section-5 {
-  padding: 40px 120px;
-  gap: 20px;
-  background-color: var(--variable-collection-light-blue);
-  flex-direction: column;
-}
-
-.text-wrapper-12 {
-  color: var(--variable-collection-blue);
+.section-4 .text-wrapper-12 {
+  color: var(--variable-collection-light-blue);
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-weight: 400;
   font-style: italic;
@@ -434,38 +532,12 @@ a {
   text-align: center;
 }
 
-.p {
+.section-4 .p {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 24px;
   text-align: center;
-}
-
-.TXT-2 {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.frame-wrapper {
-  flex: 1;
-}
-
-.input-3 {
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  width: 100%;
-}
-
-.primary-button-5 {
-  background-color: var(--variable-collection-blue);
-  border-radius: 8px;
-  padding: 10px 20px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
 .TXT-3 {
@@ -474,60 +546,187 @@ a {
   gap: 60px;
 }
 
-.zadbaj-o-swoje {
+.TXT-3 .zadbaj-o-swoje {
   color: #fff;
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 16px;
-  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  width: 518px;
+  height: 193px;
 }
 
-.footer {
-  padding: 40px 120px;
-  gap: 20px;
+.TXT-3 .OK {
+  width: 336px;
+  height: 293px;
+  background-image: url(./img/vector-10.svg);
+  background-size: cover;
+}
+
+.section-5 {
+  padding: 40px 120px 80px;
+  gap: 60px;
   background-color: var(--variable-collection-dark-blue);
 }
 
-.div-6 {
+.section-5 .div-4 {
+  gap: 15px;
+}
+
+.section-5 .div-5 {
   color: #fff;
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
-  font-size: 12px;
-}
-
-.div-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  font-size: 14px;
   width: 100%;
 }
 
-.div-5 {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 12px;
-  text-align: center;
+.section-5 .div-5 .text-wrapper-14 {
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
 }
 
-
-/* Nowe reguły dla nawigacji */
-.navi {
-  /* ... istniejące style ... */
-  flex-wrap: wrap; /* Pozwala na zawijanie elementów */
-  justify-content: space-between;
+/* Nowe reguły dla mobilnej wersji menu */
+.navi.mobile-active .navbar {
+  display: none;
 }
 
-.navbar {
-  /* Domyślnie menu jest wyświetlane poziomo */
+.navi.mobile-active .hamburger-menu {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-grow: 1; /* Pozwala na zajęcie dostępnej przestrzeni */
-  min-width: 0;
 }
 
-.primary-button {
-  /* Zapewnia, że przycisk jest zawsze na końcu */
+/* Układ menu hamburgerowego */
+.navbar.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--variable-collection-dark-blue);
+  align-items: flex-start;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.active a {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.navbar.active .text-wrapper {
+  color: #fff;
+}
+
+/* Media Query dla układu strony na mniejszych ekranach */
+@media screen and (max-width: 800px) {
+  .navi {
+    padding: 20px 40px;
+  }
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  .header .IMG {
+    display: none;
+  }
+  .header .COPY {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .header .HL {
+    align-items: center;
+    padding: 0;
+  }
+  .header .HL .div {
+    font-size: 28px;
+  }
+  .header .HL .tak-e-tych-bezp {
+    font-size: 18px;
+  }
+  .button-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+  .CTA {
+    width: 100%;
+  }
+  .section,
+  .section-2,
+  .section-3,
+  .section-4,
+  .section-5,
+  .footer {
+    padding: 20px;
+  }
+  .copy {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .copy .separator,
+  .copy .icon,
+  .copy .TXT {
+    width: 100%;
+    text-align: center;
+  }
+  .boxes {
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+  .box {
+    width: 100%;
+  }
+  .section-2 .boxes-2 {
+    flex-direction: column;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .box-2,
+  .box-3 {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .HL-2 .p,
+  .HL-4 .szczepionka-zalecana {
+    width: 100%;
+  }
+  .column {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .column .div-3 {
+    width: 100%;
+    text-align: center;
+  }
+  .photo {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .photo .copy-2 {
+    padding: 0;
+    text-align: center;
+  }
+  .photo .IMG-2,
+  .photo .IMG-3 {
+    width: 100%;
+    height: 200px;
+  }
+  .TXT-3 {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .TXT-3 .zadbaj-o-swoje {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+}
