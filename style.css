@@ -1,13 +1,16 @@
-/* Global styles and variables */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* Global styles and variables from original styleguide.css */
 :root {
-  --dark-blue: #000039;
-  --blue: #000165;
-  --txt-blue: #05053c;
-  --yellow: #f8c33a;
-  --light-blue: #b3e4fe;
-  --pink: #f9e7fc;
+  --variable-collection-dark-blue: rgba(0, 0, 57, 1);
+  --variable-collection-blue: rgba(0, 1, 101, 1);
+  --variable-collection-TXT-blue: rgba(5, 5, 60, 1);
+  --variable-collection-yellow: rgba(248, 195, 58, 1);
+  --variable-collection-light-blue: rgba(179, 228, 254, 1);
+  --variable-collection-pink: rgba(249, 231, 252, 1);
 }
 
+/* Base styles and combined content from globals.css and style.css */
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -23,7 +26,6 @@ a {
   text-decoration: none;
 }
 
-/* Base styles for the layout */
 .desktop {
   display: flex;
   flex-direction: column;
@@ -48,7 +50,7 @@ a {
   height: 150px; /* Zwiększona wysokość */
   justify-content: space-around;
   padding: 0 120px;
-  background-color: var(--dark-blue);
+  background-color: var(--variable-collection-dark-blue);
   flex-wrap: wrap;
 }
 
@@ -73,14 +75,14 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 15px 30px; /* Dostosowane padding */
-  background-color: var(--yellow);
+  padding: 15px 30px;
+  background-color: var(--variable-collection-yellow);
   border-radius: 1000px;
   cursor: pointer;
 }
 
 .primary-button .text {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Heavy", Helvetica;
   font-weight: 400;
   font-size: 20px;
@@ -91,7 +93,7 @@ a {
   height: 500px;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: var(--dark-blue);
+  background-color: var(--variable-collection-dark-blue);
   flex-direction: row;
 }
 
@@ -109,7 +111,7 @@ a {
   align-items: center;
   gap: 43px;
   padding: 20px 120px 0 60px;
-  background-color: var(--blue);
+  background-color: var(--variable-collection-blue);
 }
 
 .header .HL {
@@ -149,13 +151,13 @@ a {
   justify-content: center;
   gap: 10px;
   padding: 20px 30px;
-  background-color: var(--yellow);
+  background-color: var(--variable-collection-yellow);
   border-radius: 1000px;
   cursor: pointer;
 }
 
 .CTA .informacje-o {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Heavy", Helvetica;
   font-weight: 400;
   font-size: 24px;
@@ -259,7 +261,7 @@ a {
 .section-2 {
   padding: 40px 120px;
   gap: 60px;
-  background-color: var(--dark-blue);
+  background-color: var(--variable-collection-dark-blue);
 }
 
 .HL-2 {
@@ -279,7 +281,7 @@ a {
 .HL-2 .RSV-a .text-wrapper-3 {
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-style: italic;
-  color: var(--light-blue);
+  color: var(--variable-collection-light-blue);
 }
 
 .HL-2 .RSV-a .text-wrapper-4 {
@@ -362,7 +364,7 @@ a {
 }
 
 .HL-3 .text-wrapper-10 {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-weight: 400;
   font-style: italic;
@@ -378,7 +380,7 @@ a {
 }
 
 .column .div-3 {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 400;
   font-size: 24px;
@@ -388,7 +390,7 @@ a {
 .HL-wrapper {
   padding: 40px 120px;
   gap: 70px;
-  background-color: var(--pink);
+  background-color: var(--variable-collection-pink);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -404,14 +406,14 @@ a {
 }
 
 .HL-4 .hospitalizacja-cho {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 400;
   font-size: 24px;
 }
 
 .HL-4 .szczepionka-zalecana {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 24px;
@@ -450,7 +452,7 @@ a {
 
 .photo .copy-2 .text-wrapper-11,
 .photo .copy-2 .kobiety-w-ci-y {
-  color: var(--txt-blue);
+  color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: 24px;
@@ -459,7 +461,7 @@ a {
 .section-4 {
   padding: 40px 120px;
   gap: 20px;
-  background-color: var(--blue);
+  background-color: var(--variable-collection-blue);
 }
 
 .div-4 {
@@ -471,7 +473,7 @@ a {
 }
 
 .section-4 .text-wrapper-12 {
-  color: var(--light-blue);
+  color: var(--variable-collection-light-blue);
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-weight: 400;
   font-style: italic;
@@ -513,7 +515,7 @@ a {
 .section-5 {
   padding: 40px 120px 80px;
   gap: 60px;
-  background-color: var(--dark-blue);
+  background-color: var(--variable-collection-dark-blue);
 }
 
 .section-5 .div-4 {
