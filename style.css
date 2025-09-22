@@ -55,7 +55,6 @@ a {
   padding: 40px 120px;
   background-color: var(--variable-collection-light-blue);
   justify-content: space-between;
-  /* Włączamy elastyczne zawijanie dla całej nawigacji */
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -64,9 +63,7 @@ a {
   display: flex;
   gap: 20px;
   align-items: center;
-  /* Pozwalamy na zawijanie elementów menu */
   flex-wrap: wrap;
-  /* Dodano min-width aby elementy się nie kurczyły za bardzo */
   min-width: 0;
 }
 
@@ -77,7 +74,6 @@ a {
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
-  /* Użycie flex-shrink, aby linki mogły się kurczyć, jeśli brakuje miejsca */
   flex-shrink: 1;
   white-space: nowrap;
 }
@@ -92,7 +88,6 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  /* Pozwalamy przyciskowi na zawinięcie do nowej linii, jeśli zabraknie miejsca */
   flex-shrink: 0;
   min-width: fit-content;
 }
@@ -108,6 +103,41 @@ a {
   width: fit-content;
   white-space: nowrap;
 }
+
+/* Style for the hamburger button, initially hidden */
+.hamburger-menu {
+  display: none; /* Ukrywamy przycisk na dużych ekranach */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 11;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--variable-collection-blue);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
 
 .header {
   min-height: 100vh;
@@ -482,29 +512,50 @@ a {
   text-align: center;
 }
 
+
 /* Nowy kod dla responsywności (Media Queries) */
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 1024px) {
   .navi {
+    justify-content: space-between;
     padding: 20px 40px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .navi {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
-    gap: 15px;
   }
+
   .navbar {
+    display: none;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-  .primary-button {
+    position: absolute;
+    top: 85px; /* Dostosuj pozycję, aby była pod nawigacją */
+    left: 0;
     width: 100%;
-    margin-top: 15px;
+    background-color: var(--variable-collection-light-blue);
+    padding: 20px;
+    z-index: 9;
+    align-items: flex-start;
   }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .primary-button {
+    /* Upewnij się, że przycisk jest zawsze widoczny, nawet jeśli menu jest ukryte */
+    margin: 0;
+  }
+  
+  .hamburger-menu {
+    display: flex; /* Pokaż przycisk hamburgera */
+  }
+
   .header {
     flex-direction: column;
     padding: 20px;
@@ -589,3 +640,6 @@ a {
     gap: 20px;
   }
 }
+<br>
+This video can help you understand how to implement a hamburger menu using HTML, CSS, and JavaScript. [Build a Hamburger Menu with HTML, CSS, and JavaScript](https://www.youtube.com/watch?v=aNDqzlAKmZc)
+http://googleusercontent.com/youtube_content/1
