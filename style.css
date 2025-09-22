@@ -5,21 +5,6 @@
   font-family: "Pfizer Diatype-Regular";
   src: url("https://anima-uploads.s3.amazonaws.com/projects/6099ea3c4d108f077501c465/fonts/augusta.ttf") format("truetype");
 }
-/* Przykładowe definicje dla pozostałych czcionek, jeśli istnieją */
-/*
-@font-face {
-  font-family: "Pfizer Diatype-Bold";
-  src: url(".../Pfizer-Diatype-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Pfizer Diatype-Heavy";
-  src: url(".../Pfizer-Diatype-Heavy.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Pfizer Diatype-HeavyItalic";
-  src: url(".../Pfizer-Diatype-HeavyItalic.ttf") format("truetype");
-}
-*/
 
 :root {
   --variable-collection-dark-blue: rgba(0, 0, 57, 1);
@@ -42,24 +27,12 @@ body {
   height: 100%;
   font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
   line-height: 1.6;
+  color: var(--variable-collection-TXT-blue);
+  font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
 a {
   text-decoration: none;
-}
-
-.desktop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  width: 100%;
-  min-height: 100vh;
-}
-
-section {
-  width: 100%;
-  padding: 40px 5%;
 }
 
 h1, h2, h3 {
@@ -79,6 +52,30 @@ h2 {
 
 h3 {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  min-height: 100vh;
+}
+
+section {
+  width: 100%;
+  padding: 40px 5%;
+}
+
+.section-title {
+  color: var(--variable-collection-TXT-blue);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-content {
+  line-height: 1.6;
 }
 
 /* Navigation */
@@ -190,9 +187,7 @@ h3 {
   text-align: center;
 }
 
-.section .copy .RSV-to-powszechny-i {
-  color: #000;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+.section .copy .text-content {
   max-width: 900px;
 }
 
@@ -214,8 +209,188 @@ h3 {
   max-width: 300px;
 }
 
-.box .seniorzy-powy-ej,
-.box .text-wrapper-2 {
-  color: #000;
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
-  font-weight: 40
+.box .section-title,
+.box .text-content {
+  line-height: 1.2;
+}
+
+/* Section 2 - RSV vs Flu */
+.section-2 {
+  background-color: var(--variable-collection-dark-blue);
+  padding: 40px 5%;
+  gap: 40px;
+}
+
+.HL-2 .RSV-a .text-wrapper-3 {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  color: var(--variable-collection-light-blue);
+}
+
+.HL-2 .RSV-a .text-wrapper-4 {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
+  color: #fff;
+}
+
+.HL-2 .text-content {
+  color: #fff;
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+  max-width: 844px;
+}
+
+.boxes-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.box-2, .box-3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+}
+
+.box-2 img, .box-3 img {
+  flex-shrink: 0;
+}
+
+.box-2 .text-content, .box-3 .text-content {
+  color: #fff;
+  line-height: 1.2;
+}
+
+.box-2 .text-content .section-title,
+.box-3 .text-content .section-title {
+  font-family: "Pfizer Diatype-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.box-2 .text-content .text-content,
+.box-3 .text-content .text-content {
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+}
+
+/* Section 3 - Symptoms */
+.section-3, .HL-wrapper {
+  padding: 40px 5%;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HL-3, .HL-4 {
+  width: 100%;
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  text-align: left;
+}
+
+.column .text-content {
+  width: 100%;
+  max-width: 400px;
+}
+
+.HL-wrapper {
+  background-color: var(--variable-collection-pink);
+}
+
+.HL-4 .text-content {
+  max-width: 1000px;
+}
+
+/* Section 4 - Who is it for? */
+.photo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.photo .IMG-2, .photo .IMG-3 {
+  width: 100%;
+  max-width: 584px;
+  height: 339px;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo .copy-2 {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.photo .copy-2 .section-title {
+  font-weight: 700;
+}
+
+/* Section 5 - Where to get vaccinated */
+.section-4 {
+  padding: 40px 5%;
+  background-color: var(--variable-collection-blue);
+  gap: 20px;
+  text-align: center;
+}
+
+.section-4 .text-content {
+  color: #fff;
+}
+
+.TXT-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.TXT-3 .text-content {
+  color: #fff;
+  line-height: 1.2;
+  max-width: 518px;
+  width: 100%;
+}
+
+.TXT-3 .OK {
+  width: 100%;
+  max-width: 336px;
+  height: 293px;
+  background-image: url(./img/vector-10.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Footer */
+.section-5 {
+  padding: 40px 5%;
+  background-color: var(--variable-collection-dark-blue);
+  gap: 30px;
+}
+
+.section-5 .text-content {
+  color: #fff;
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
