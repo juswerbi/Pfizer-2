@@ -31,7 +31,7 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  width: 100%; /* Upewniamy się, że .desktop zajmuje całą szerokość */
+  width: 100%;
 }
 
 .navi,
@@ -48,16 +48,16 @@ a {
 }
 
 .navi {
-  position: fixed; /* Zmienione na fixed, aby nawigacja była zawsze widoczna */
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  min-height: 100px; /* Zapewniamy minimalną wysokość, aby uniknąć błędów renderowania */
+  min-height: 100px;
   justify-content: space-between;
   padding: 32px 120px;
   background-color: var(--variable-collection-dark-blue);
   flex-wrap: wrap;
-  flex-direction: row; /* Domyślny układ to wiersz */
+  flex-direction: row;
 }
 
 .navbar {
@@ -65,7 +65,7 @@ a {
   align-items: center;
   gap: 37px;
   justify-content: flex-start;
-  flex-wrap: wrap; /* Pozwalamy linkom na zawijanie się */
+  flex-wrap: wrap;
   transition: all 0.3s ease-in-out;
 }
 
@@ -89,7 +89,7 @@ a {
   background-color: var(--variable-collection-yellow);
   border-radius: 1000px;
   cursor: pointer;
-  flex-shrink: 0; /* Zapewnia, że przycisk się nie kurczy */
+  flex-shrink: 0;
 }
 
 .primary-button .text {
@@ -102,7 +102,7 @@ a {
 
 /* Style for the hamburger button, initially hidden */
 .hamburger-menu {
-  display: none; /* Domyślnie ukryty */
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -585,6 +585,7 @@ a {
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
 }
+
 
 /* Nowe reguły dla mobilnej wersji menu */
 .navi.mobile-active .navbar {
