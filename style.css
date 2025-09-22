@@ -103,7 +103,7 @@ h3 {
 .navbar {
   display: flex;
   justify-content: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: clamp(10px, 2vw, 37px);
 }
 
@@ -112,7 +112,6 @@ h3 {
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
   font-size: clamp(0.9rem, 1.5vw, 1.3rem);
-  white-space: nowrap;
 }
 
 .primary-button {
