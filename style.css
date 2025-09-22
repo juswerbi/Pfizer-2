@@ -74,6 +74,12 @@ h1 {
 }
 
 h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+}
+
+.section-3 .HL-3 .text-wrapper-10,
+.section-3 .HL-3 .text-wrapper-10 + h3,
+.section-4 .div-4 .text-wrapper-12 {
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-size: 40px;
   text-transform: uppercase;
