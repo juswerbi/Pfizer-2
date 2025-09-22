@@ -7,8 +7,14 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navi">
-        <div class="navbar">
+      <nav class="navi" id="navMenu">
+        <button class="hamburger-menu" id="hamburgerButton">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="navbar" id="navbarNav">
           <a href="#" class="text-wrapper">O szczepieniu-6</a>
           <a href="#" class="text-wrapper">Dla kogo?</a>
           <a href="#" class="text-wrapper">RSV a grypa</a>
@@ -166,5 +172,14 @@
         </div>
       </main>
     </div>
+    <script>
+      const hamburger = document.getElementById('hamburgerButton');
+      const navbar = document.getElementById('navbarNav');
+
+      hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+    </script>
   </body>
 </html>
