@@ -26,7 +26,7 @@ a {
   text-decoration: none;
 }
 
-.container {
+.desktop {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,7 +137,6 @@ a {
 .hamburger-menu.active .bar:nth-child(3) {
   transform: translateY(-11px) rotate(-45deg);
 }
-
 
 .header {
   min-height: 100vh;
@@ -529,7 +528,8 @@ a {
     align-items: center;
     padding: 20px;
   }
-
+  
+  /* Ukrywamy menu na małych ekranach */
   .navbar {
     display: none;
     flex-direction: column;
@@ -543,17 +543,21 @@ a {
     align-items: flex-start;
   }
 
+  /* Pokazujemy menu, gdy przycisk jest aktywny */
   .navbar.active {
     display: flex;
   }
-
-  .primary-button {
-    /* Upewnij się, że przycisk jest zawsze widoczny, nawet jeśli menu jest ukryte */
-    margin: 0;
+  
+  /* Pokaż przycisk hamburgera na małych ekranach */
+  .hamburger-menu {
+    display: flex; 
   }
   
-  .hamburger-menu {
-    display: flex; /* Pokaż przycisk hamburgera */
+  /* Upewnij się, że przycisk CTA jest widoczny i przechodzi do nowej linii */
+  .primary-button {
+    margin-left: auto; /* Przycisk "Gdzie się zaszczepić" w oddzielnej linii */
+    flex-basis: 100%;
+    margin-top: 15px;
   }
 
   .header {
@@ -640,6 +644,3 @@ a {
     gap: 20px;
   }
 }
-<br>
-This video can help you understand how to implement a hamburger menu using HTML, CSS, and JavaScript. [Build a Hamburger Menu with HTML, CSS, and JavaScript](https://www.youtube.com/watch?v=aNDqzlAKmZc)
-http://googleusercontent.com/youtube_content/1
