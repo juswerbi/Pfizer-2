@@ -1,6 +1,26 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-/* Global styles and variables from original styleguide.css */
+/* Wczytywanie czcionek, jeśli są dostępne lokalnie lub z URL */
+@font-face {
+  font-family: "Pfizer Diatype-Regular";
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/6099ea3c4d108f077501c465/fonts/augusta.ttf") format("truetype");
+}
+/* Przykładowe definicje dla pozostałych czcionek, jeśli istnieją */
+/*
+@font-face {
+  font-family: "Pfizer Diatype-Bold";
+  src: url(".../Pfizer-Diatype-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pfizer Diatype-Heavy";
+  src: url(".../Pfizer-Diatype-Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pfizer Diatype-HeavyItalic";
+  src: url(".../Pfizer-Diatype-HeavyItalic.ttf") format("truetype");
+}
+*/
+
 :root {
   --variable-collection-dark-blue: rgba(0, 0, 57, 1);
   --variable-collection-blue: rgba(0, 1, 101, 1);
@@ -10,7 +30,7 @@
   --variable-collection-pink: rgba(249, 231, 252, 1);
 }
 
-/* Base styles and combined content from globals.css and style.css */
+/* General styles */
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -20,6 +40,8 @@ html,
 body {
   margin: 0;
   height: 100%;
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
 a {
@@ -31,72 +53,83 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-}
-
-.navi,
-.header,
-.section,
-.section-2,
-.section-3,
-.section-4,
-.section-5 {
-  display: flex;
   width: 100%;
-  align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
 }
 
+section {
+  width: 100%;
+  padding: 40px 5%;
+}
+
+h1, h2, h3 {
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+/* Navigation */
 .navi {
-  height: 150px;
+  display: flex;
   justify-content: space-between;
-  padding: 32px 120px;
-  background-color: var(--variable-collection-dark-blue);
+  align-items: center;
   flex-wrap: wrap;
+  padding: 20px 5%;
+  background-color: var(--variable-collection-dark-blue);
+  width: 100%;
 }
 
 .navbar {
   display: flex;
-  align-items: center;
-  gap: 37px;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 37px);
+  justify-content: center;
 }
 
 .navbar .text-wrapper {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
-  font-size: 21px;
-  text-align: left;
-  display: block;
+  font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+  white-space: nowrap;
 }
 
 .primary-button {
   all: unset;
-  display: flex;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   padding: 15px 30px;
   background-color: var(--variable-collection-yellow);
   border-radius: 1000px;
   cursor: pointer;
+  text-align: center;
 }
 
 .primary-button .text {
   color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Heavy", Helvetica;
   font-weight: 400;
-  font-size: 20px;
-  text-align: center;
+  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  white-space: nowrap;
 }
 
+/* Header */
 .header {
-  height: 500px;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  width: 100%;
   background-color: var(--variable-collection-dark-blue);
-  flex-direction: row;
 }
 
 .header .IMG {
@@ -104,136 +137,71 @@ a {
   background-image: url(./img/img.png);
   background-size: cover;
   background-position: center;
+  min-height: 300px;
 }
 
 .header .COPY {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 43px;
-  padding: 20px 120px 0 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 5% 5% 5% 3%;
   background-color: var(--variable-collection-blue);
-}
-
-.header .HL {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 100px 0 0;
-}
-
-.header .HL .div,
-.header .HL .tak-e-tych-bezp {
-  color: #fff;
+  text-align: center;
 }
 
 .header .HL .div {
+  color: #fff;
   font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 34px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .header .HL .tak-e-tych-bezp {
+  color: #fff;
   font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 28px;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
   margin-top: -10px;
-}
-
-.button-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
 }
 
 .CTA {
   all: unset;
-  display: flex;
-  width: 500px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   padding: 20px 30px;
   background-color: var(--variable-collection-yellow);
   border-radius: 1000px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .CTA .informacje-o {
   color: var(--variable-collection-TXT-blue);
   font-family: "Pfizer Diatype-Heavy", Helvetica;
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Section 1 - What is RSV */
+.section .copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   text-align: center;
 }
 
-.section {
-  padding: 40px 120px 60px;
-}
-
-.czym-jest-RSV-wrapper,
-.kto-jest-w-grupie-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 10px 0;
-}
-
-.czym-jest-RSV,
-.kto-jest-w-grupie {
+.section .copy .RSV-to-powszechny-i {
   color: #000;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.copy {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.copy .separator {
-  width: 30px;
-  height: 122px;
-}
-
-.copy .icon {
-  width: 109px;
-  display: flex;
-  justify-content: center;
-}
-
-.copy .TXT {
-  display: flex;
-  width: 997px;
-  justify-content: center;
-  align-items: center;
-}
-
-.copy .RSV-to-powszechny-i {
-  color: #000;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  max-width: 900px;
 }
 
 .boxes {
   display: flex;
-  justify-content: space-between;
-  width: 1200px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
 }
 
 .box {
@@ -241,304 +209,13 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-}
-
-.box .element {
-  width: 330px;
-  height: 120px;
-}
-
-.box .div-wrapper,
-.box .TXT-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 15px;
   text-align: center;
+  max-width: 300px;
 }
 
 .box .seniorzy-powy-ej,
 .box .text-wrapper-2 {
   color: #000;
   font-family: "Pfizer Diatype-Heavy", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
-}
-
-.section-2 {
-  padding: 40px 120px;
-  gap: 60px;
-  background-color: var(--variable-collection-dark-blue);
-}
-
-.HL-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.HL-2 .RSV-a {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 40px;
-  text-align: center;
-}
-
-.HL-2 .RSV-a .text-wrapper-3 {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-style: italic;
-  color: var(--variable-collection-light-blue);
-}
-
-.HL-2 .RSV-a .text-wrapper-4 {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-style: italic;
-  color: #fff;
-}
-
-.HL-2 .p {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.boxes-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px;
-}
-
-.left,
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-.left {
-  width: 589px;
-}
-
-.box-2 {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 0 10px;
-}
-
-.box-3 {
-  display: flex;
-  align-items: flex-start;
-  gap: 120px;
-  padding: 0 10px;
-}
-
-.box-2 .div-2,
-.box-3 .div-2 {
-  color: #fff;
-  font-size: 24px;
-  line-height: 24px;
-}
-
-.box-2 .div-2 .text-wrapper-6,
-.box-3 .div-2 .text-wrapper-6 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-}
-
-.box-2 .div-2 .text-wrapper-7,
-.box-3 .div-2 .text-wrapper-7 {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-}
-
-.section-3 {
-  padding: 40px 120px;
-  gap: 70px;
-}
-
-.HL-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-3 .text-wrapper-10 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.column {
-  display: flex;
-  justify-content: center;
-  gap: 200px;
-  width: 100%;
-}
-
-.column .div-3 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  width: 385px;
-}
-
-.HL-wrapper {
-  padding: 40px 120px;
-  gap: 70px;
-  background-color: var(--variable-collection-pink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.HL-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-4 .hospitalizacja-cho {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.HL-4 .szczepionka-zalecana {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.photo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.photo .IMG-2,
-.photo .IMG-3 {
-  width: 584px;
-  height: 339px;
-  background-size: cover;
-  background-position: center;
-}
-
-.photo .IMG-2 {
-  background-image: url(./img/img-1.png);
-}
-
-.photo .IMG-3 {
-  background-image: url(./img/img-2.png);
-}
-
-.photo .copy-2 {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 60px;
-  flex: 1;
-}
-
-.photo .copy-2 .text-wrapper-11,
-.photo .copy-2 .kobiety-w-ci-y {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.section-4 {
-  padding: 40px 120px;
-  gap: 20px;
-  background-color: var(--variable-collection-blue);
-}
-
-.div-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-}
-
-.section-4 .text-wrapper-12 {
-  color: var(--variable-collection-light-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.section-4 .p {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-}
-
-.TXT-3 {
-  display: inline-flex;
-  justify-content: center;
-  gap: 60px;
-}
-
-.TXT-3 .zadbaj-o-swoje {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
-  width: 518px;
-  height: 193px;
-}
-
-.TXT-3 .OK {
-  width: 336px;
-  height: 293px;
-  background-image: url(./img/vector-10.svg);
-  background-size: cover;
-}
-
-.section-5 {
-  padding: 40px 120px 80px;
-  gap: 60px;
-  background-color: var(--variable-collection-dark-blue);
-}
-
-.section-5 .div-4 {
-  gap: 15px;
-}
-
-.section-5 .div-5 {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 14px;
-  width: 100%;
-}
-
-.section-5 .div-5 .text-wrapper-14 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-}
+  font-weight: 40
