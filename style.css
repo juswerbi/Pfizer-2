@@ -2,9 +2,24 @@
 
 /* Wczytywanie czcionek, jeśli są dostępne lokalnie lub z URL */
 @font-face {
-  font-family: "arial-Regular";
+  font-family: "Pfizer Diatype-Regular";
   src: url("https://anima-uploads.s3.amazonaws.com/projects/6099ea3c4d108f077501c465/fonts/augusta.ttf") format("truetype");
 }
+/* Przykładowe definicje dla pozostałych czcionek, jeśli istnieją */
+/*
+@font-face {
+  font-family: "Pfizer Diatype-Bold";
+  src: url(".../Pfizer-Diatype-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pfizer Diatype-Heavy";
+  src: url(".../Pfizer-Diatype-Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pfizer Diatype-HeavyItalic";
+  src: url(".../Pfizer-Diatype-HeavyItalic.ttf") format("truetype");
+}
+*/
 
 :root {
   --variable-collection-dark-blue: rgba(0, 0, 57, 1);
@@ -25,14 +40,26 @@ html,
 body {
   margin: 0;
   height: 100%;
-  font-family: "arial", Helvetica, sans-serif;
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
   line-height: 1.6;
-  color: var(--variable-collection-TXT-blue);
-  font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
 a {
   text-decoration: none;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  min-height: 100vh;
+}
+
+section {
+  width: 100%;
+  padding: 40px 5%;
 }
 
 h1, h2, h3 {
@@ -52,30 +79,6 @@ h2 {
 
 h3 {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
-}
-
-.desktop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  width: 100%;
-  min-height: 100vh;
-}
-
-section {
-  width: 100%;
-  padding: 40px 5%;
-}
-
-.section-title {
-  color: var(--variable-collection-TXT-blue);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.text-content {
-  line-height: 1.6;
 }
 
 /* Navigation */
@@ -151,13 +154,13 @@ section {
 
 .header .HL .div {
   color: #fff;
-  font-family: "arial", Helvetica;
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .header .HL .tak-e-tych-bezp {
   color: #fff;
-  font-family: "arial", Helvetica;
+  font-family: "Pfizer Diatype-Regular", Helvetica;
   font-size: clamp(1.2rem, 3vw, 1.75rem);
   margin-top: -10px;
 }
@@ -187,7 +190,9 @@ section {
   text-align: center;
 }
 
-.section .copy .text-content {
+.section .copy .RSV-to-powszechny-i {
+  color: #000;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   max-width: 900px;
 }
 
@@ -209,8 +214,12 @@ section {
   max-width: 300px;
 }
 
-.box .section-title,
-.box .text-content {
+.box .seniorzy-powy-ej,
+.box .text-wrapper-2 {
+  color: #000;
+  font-family: "Pfizer Diatype-Heavy", Helvetica;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.2;
 }
 
@@ -231,10 +240,12 @@ section {
   color: #fff;
 }
 
-.HL-2 .text-content {
+.HL-2 .p {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
   max-width: 844px;
 }
 
@@ -263,19 +274,20 @@ section {
   flex-shrink: 0;
 }
 
-.box-2 .text-content, .box-3 .text-content {
+.box-2 .div-2, .box-3 .div-2 {
   color: #fff;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.2;
 }
 
-.box-2 .text-content .section-title,
-.box-3 .text-content .section-title {
+.box-2 .div-2 .text-wrapper-6,
+.box-3 .div-2 .text-wrapper-6 {
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
 }
 
-.box-2 .text-content .text-content,
-.box-3 .text-content .text-content {
+.box-2 .div-2 .text-wrapper-7,
+.box-3 .div-2 .text-wrapper-7 {
   font-family: "Pfizer Diatype-Regular", Helvetica;
   font-weight: 400;
 }
@@ -302,7 +314,9 @@ section {
   text-align: left;
 }
 
-.column .text-content {
+.column .div-3 {
+  color: var(--variable-collection-TXT-blue);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   width: 100%;
   max-width: 400px;
 }
@@ -311,7 +325,9 @@ section {
   background-color: var(--variable-collection-pink);
 }
 
-.HL-4 .text-content {
+.HL-4 .hospitalizacja-cho {
+  color: var(--variable-collection-TXT-blue);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   max-width: 1000px;
 }
 
@@ -339,8 +355,11 @@ section {
   flex: 1;
 }
 
-.photo .copy-2 .section-title {
+.photo .copy-2 .text-wrapper-11,
+.photo .copy-2 .kobiety-w-ci-y {
+  color: var(--variable-collection-TXT-blue);
   font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 /* Section 5 - Where to get vaccinated */
@@ -351,8 +370,9 @@ section {
   text-align: center;
 }
 
-.section-4 .text-content {
+.section-4 .p {
   color: #fff;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .TXT-3 {
@@ -363,8 +383,9 @@ section {
   gap: 30px;
 }
 
-.TXT-3 .text-content {
+.TXT-3 .zadbaj-o-swoje {
   color: #fff;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.2;
   max-width: 518px;
   width: 100%;
@@ -387,10 +408,49 @@ section {
   gap: 30px;
 }
 
-.section-5 .text-content {
+.section-5 .div-5 {
   color: #fff;
   font-size: clamp(0.75rem, 1vw, 0.875rem);
   width: 100%;
   max-width: 1000px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .navi {
+    flex-direction: column;
+    padding: 20px 5%;
+    gap: 20px;
+  }
+  
+  .navbar {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header .IMG {
+    min-height: 200px;
+  }
+
+  .header .COPY {
+    padding: 5%;
+  }
+
+  .CTA {
+    width: 100%;
+  }
+
+  .boxes-2, .column, .photo, .TXT-3 {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .box-2, .box-3 {
+    gap: 10px;
+  }
 }
