@@ -67,9 +67,10 @@ a {
   align-items: flex-start;
   /* Równomierne rozłożenie pozycji na dostępnej szerokości */
   justify-content: space-between;
-  /* Usunięto stałą szerokość (np. 900px), aby rozciągnąć menu */
-  flex-grow: 1; /* Pozwala menu zająć całą dostępną przestrzeń */
-  margin-right: 30px; /* Dodaj margines między menu a przyciskiem CTA */
+  /* Pozwala menu zająć całą dostępną przestrzeń */
+  flex-grow: 1; 
+  /* Dodaj margines między menu a przyciskiem CTA */
+  margin-right: 30px; 
   flex-shrink: 0; 
   transition: all 0.3s ease-in-out;
 }
@@ -78,15 +79,15 @@ a {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
-  /* Zmniejszenie czcionki o 2px */
-  font-size: 19px;
+  /* Zmniejszenie czcionki do 18px (ostatnia próba optymalizacji) */
+  font-size: 18px;
   text-align: left;
-  /* Wymuś łamanie tekstu, aby zmieścić się na 1 linii */
+  /* Wymuś łamanie tekstu */
   display: block;
-  /* Użyj elastycznej szerokości */
-  flex: 1 1 100px; 
-  min-width: 90px;
-  line-height: 1.2; 
+  /* Ustawienie minimalnej szerokości na 80px, aby zmieściło się 8 pozycji */
+  flex: 1 1 80px; 
+  min-width: 80px;
+  line-height: 1.1; /* Zacieśnienie odstępów między wierszami */
   white-space: normal;
 }
 
