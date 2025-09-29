@@ -54,10 +54,9 @@ a {
   z-index: 10;
   min-height: 100px;
   justify-content: space-between;
-  /* Zmniejszenie paddingu bocznego, by menu miało więcej miejsca */
+  /* Zmiana paddingu na 60px */
   padding: 32px 60px;
   background-color: var(--variable-collection-dark-blue);
-  /* Usunięto flex-wrap: wrap, aby zmusić do jednej linii */
   flex-direction: row;
 }
 
@@ -79,7 +78,7 @@ a {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
-  /* Zmniejszenie czcionki do 18px (ostatnia próba optymalizacji) */
+  /* Ostatnie zmniejszenie czcionki */
   font-size: 18px;
   text-align: left;
   /* Wymuś łamanie tekstu */
@@ -87,7 +86,7 @@ a {
   /* Ustawienie minimalnej szerokości na 80px, aby zmieściło się 8 pozycji */
   flex: 1 1 80px; 
   min-width: 80px;
-  line-height: 1.1; /* Zacieśnienie odstępów między wierszami */
+  line-height: 1.1; 
   white-space: normal;
 }
 
@@ -599,6 +598,31 @@ a {
   font-weight: 700;
 }
 
+/* Nowy styl dla linków w stopce */
+.section-5 .footer-links {
+  list-style: none; /* Usuń punktor */
+  display: flex;
+  justify-content: center; /* Wyśrodkuj linki */
+  gap: 30px; /* Odstęp między linkami */
+  padding: 0;
+  margin: 0;
+}
+
+.section-5 .footer-links a {
+  color: #fff; 
+  font-family: "Pfizer Diatype-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  /* Zgodnie z oryginalnym .div-5 */
+}
+
+/* Nowy styl dla linków w referencjach, by były klikalne i widoczne */
+.section-5 .div-5 a {
+    color: var(--variable-collection-light-blue); /* Jasnoniebieski kolor linków */
+    text-decoration: underline;
+}
+
 /* --- LOGIKA MOBILNA DLA EKRANÓW MNIEJSZYCH NIŻ 1200PX --- */
 @media (max-width: 1200px) {
   /* Resetowanie desktopowych właściwości, by menu mobilne się nie psuło */
@@ -758,6 +782,13 @@ a {
     .TXT-3 .zadbaj-o-swoje {
       width: 100%;
       height: auto;
+      text-align: center;
+    }
+
+    /* Zmiana w stopce na widoku mobilnym - linki prawne pionowo */
+    .section-5 .footer-links {
+      flex-direction: column;
+      gap: 10px;
       text-align: center;
     }
   }
