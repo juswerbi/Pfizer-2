@@ -102,7 +102,7 @@ a {
 
 /* Style for the hamburger button, initially hidden */
 .hamburger-menu {
-  display: none;
+  display: none; /* Domyślnie ukryty dla desktopu */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -586,154 +586,155 @@ a {
   font-weight: 700;
 }
 
-/* Reguły dla mobilnego menu */
-.navi.mobile-active .navbar {
-  display: none;
-}
-
-.navi.mobile-active .hamburger-menu {
-  display: flex;
-}
-
-.navi.desktop-active .navbar {
-  display: flex;
-}
-
-.navi.desktop-active .hamburger-menu {
-  display: none;
-}
-
-.navbar.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  background-color: var(--variable-collection-dark-blue);
-  align-items: flex-start;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar.active a {
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-}
-
-.navbar.active .text-wrapper {
-  color: #fff;
-}
-
-/* Media Query dla układu strony na mniejszych ekranach */
-@media screen and (max-width: 800px) {
+/* --- LOGIKA MOBILNA DLA EKRANÓW MNIEJSZYCH NIŻ 1200PX --- */
+@media (max-width: 1200px) {
   .navi {
     padding: 20px 40px;
   }
-  .header {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    text-align: center;
-  }
-  .header .IMG {
+  
+  /* Ukryj standardowe menu i pokaż hamburger */
+  .navbar {
     display: none;
   }
-  .header .COPY {
-    align-items: center;
-    text-align: center;
+  
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  /* Przestaw przycisk na prawo, aby zrobić miejsce dla hamburgera */
+  .primary-button {
+    margin-left: auto;
+  }
+  
+  /* Styl dla rozwiniętego menu hamburgera */
+  .navbar.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px; /* Wysokość navi */
+    left: 0;
+    width: 100%;
     padding: 20px;
+    background-color: var(--variable-collection-dark-blue);
+    align-items: flex-start;
+    transition: all 0.3s ease-in-out;
   }
-  .header .HL {
-    align-items: center;
-    padding: 0;
-  }
-  .header .HL .div {
-    font-size: 28px;
-  }
-  .header .HL .tak-e-tych-bezp {
-    font-size: 18px;
-  }
-  .button-wrapper {
-    flex-direction: column;
-    width: 100%;
-  }
-  .CTA {
-    width: 100%;
-  }
-  .section,
-  .section-2,
-  .section-3,
-  .section-4,
-  .section-5,
-  .footer {
-    padding: 20px;
-  }
-  .copy {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .copy .separator,
-  .copy .icon,
-  .copy .TXT {
+  
+  .navbar.active a {
     width: 100%;
     text-align: center;
+    padding: 10px 0;
   }
-  .boxes {
-    flex-direction: column;
-    gap: 40px;
-    width: 100%;
-  }
-  .box {
-    width: 100%;
-  }
-  .section-2 .boxes-2 {
-    flex-direction: column;
-  }
-  .left,
-  .right {
-    width: 100%;
-  }
-  .box-2,
-  .box-3 {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 10px;
-  }
-  .HL-2 .p,
-  .HL-4 .szczepionka-zalecana {
-    width: 100%;
-  }
-  .column {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .column .div-3 {
-    width: 100%;
-    text-align: center;
-  }
-  .photo {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .photo .copy-2 {
-    padding: 0;
-    text-align: center;
-  }
-  .photo .IMG-2,
-  .photo .IMG-3 {
-    width: 100%;
-    height: 200px;
-  }
-  .TXT-3 {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .TXT-3 .zadbaj-o-swoje {
-    width: 100%;
-    height: auto;
-    text-align: center;
+
+  /* Poprawki dla małych ekranów (np. 800px) dla ogólnego układu strony, a nie tylko nawigacji */
+  @media screen and (max-width: 800px) {
+    .navi {
+      padding: 20px;
+    }
+    .header {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .header .IMG {
+      display: none;
+    }
+    .header .COPY {
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .header .HL {
+      align-items: center;
+      padding: 0;
+    }
+    .header .HL .div {
+      font-size: 28px;
+    }
+    .header .HL .tak-e-tych-bezp {
+      font-size: 18px;
+    }
+    .button-wrapper {
+      flex-direction: column;
+      width: 100%;
+    }
+    .CTA {
+      width: 100%;
+    }
+    .section,
+    .section-2,
+    .section-3,
+    .section-4,
+    .section-5,
+    .footer {
+      padding: 20px;
+    }
+    .copy {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .copy .separator,
+    .copy .icon,
+    .copy .TXT {
+      width: 100%;
+      text-align: center;
+    }
+    .boxes {
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+    }
+    .box {
+      width: 100%;
+    }
+    .section-2 .boxes-2 {
+      flex-direction: column;
+    }
+    .left,
+    .right {
+      width: 100%;
+    }
+    .box-2,
+    .box-3 {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .HL-2 .p,
+    .HL-4 .szczepionka-zalecana {
+      width: 100%;
+    }
+    .column {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .column .div-3 {
+      width: 100%;
+      text-align: center;
+    }
+    .photo {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .photo .copy-2 {
+      padding: 0;
+      text-align: center;
+    }
+    .photo .IMG-2,
+    .photo .IMG-3 {
+      width: 100%;
+      height: 200px;
+    }
+    .TXT-3 {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .TXT-3 .zadbaj-o-swoje {
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
   }
 }
