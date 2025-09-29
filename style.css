@@ -54,7 +54,8 @@ a {
   z-index: 10;
   min-height: 100px;
   justify-content: space-between;
-  padding: 32px 120px;
+  /* Zmniejszenie paddingu bocznego, by menu miało więcej miejsca */
+  padding: 32px 60px;
   background-color: var(--variable-collection-dark-blue);
   /* Usunięto flex-wrap: wrap, aby zmusić do jednej linii */
   flex-direction: row;
@@ -64,11 +65,12 @@ a {
   display: flex;
   /* Wyrównanie do góry kontenera navi */
   align-items: flex-start;
-  /* Równomierne rozłożenie pozycji na określonej szerokości */
+  /* Równomierne rozłożenie pozycji na dostępnej szerokości */
   justify-content: space-between;
-  /* Ogranicz szerokość, aby wymusić łamanie tekstu w linkach */
-  width: 900px; 
-  flex-shrink: 0; /* Zapobiega zmniejszaniu się paska nawigacyjnego */
+  /* Usunięto stałą szerokość (np. 900px), aby rozciągnąć menu */
+  flex-grow: 1; /* Pozwala menu zająć całą dostępną przestrzeń */
+  margin-right: 30px; /* Dodaj margines między menu a przyciskiem CTA */
+  flex-shrink: 0; 
   transition: all 0.3s ease-in-out;
 }
 
@@ -76,13 +78,15 @@ a {
   color: #fff;
   font-family: "Pfizer Diatype-Bold", Helvetica;
   font-weight: 700;
-  font-size: 21px;
+  /* Zmniejszenie czcionki o 2px */
+  font-size: 19px;
   text-align: left;
   /* Wymuś łamanie tekstu, aby zmieścić się na 1 linii */
   display: block;
-  width: 100px; /* Ogranicz szerokość pojedynczego linku */
-  line-height: 1.2; /* Zmniejsz odstęp między wierszami dla lepszego wyglądu */
-  /* Wyrównanie do lewej wewnątrz pozycji (domyślne) */
+  /* Użyj elastycznej szerokości */
+  flex: 1 1 100px; 
+  min-width: 90px;
+  line-height: 1.2; 
   white-space: normal;
 }
 
@@ -596,14 +600,17 @@ a {
 
 /* --- LOGIKA MOBILNA DLA EKRANÓW MNIEJSZYCH NIŻ 1200PX --- */
 @media (max-width: 1200px) {
-  /* Resetowanie mobilnych właściwości menu */
+  /* Resetowanie desktopowych właściwości, by menu mobilne się nie psuło */
   .navbar {
-    width: auto;
+    flex-grow: 0;
+    margin-right: 0;
     justify-content: flex-start;
     align-items: center;
   }
   .navbar .text-wrapper {
-    width: auto;
+    flex: 0 0 auto;
+    min-width: 100px; /* Zabezpieczenie przed zbyt dużym skurczeniem */
+    font-size: 21px; /* Przywrócenie pierwotnego rozmiaru na mobile */
   }
 
   /* Logika mobilna - zachowana z poprzedniej wersji */
