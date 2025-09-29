@@ -56,16 +56,19 @@ a {
   justify-content: space-between;
   padding: 32px 120px;
   background-color: var(--variable-collection-dark-blue);
-  flex-wrap: wrap;
+  /* Usunięto flex-wrap: wrap, aby zmusić do jednej linii */
   flex-direction: row;
 }
 
 .navbar {
   display: flex;
-  align-items: center;
-  gap: 37px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  /* Wyrównanie do góry kontenera navi */
+  align-items: flex-start;
+  /* Równomierne rozłożenie pozycji na określonej szerokości */
+  justify-content: space-between;
+  /* Ogranicz szerokość, aby wymusić łamanie tekstu w linkach */
+  width: 900px; 
+  flex-shrink: 0; /* Zapobiega zmniejszaniu się paska nawigacyjnego */
   transition: all 0.3s ease-in-out;
 }
 
@@ -75,7 +78,12 @@ a {
   font-weight: 700;
   font-size: 21px;
   text-align: left;
+  /* Wymuś łamanie tekstu, aby zmieścić się na 1 linii */
   display: block;
+  width: 100px; /* Ogranicz szerokość pojedynczego linku */
+  line-height: 1.2; /* Zmniejsz odstęp między wierszami dla lepszego wyglądu */
+  /* Wyrównanie do lewej wewnątrz pozycji (domyślne) */
+  white-space: normal;
 }
 
 .primary-button {
@@ -588,6 +596,17 @@ a {
 
 /* --- LOGIKA MOBILNA DLA EKRANÓW MNIEJSZYCH NIŻ 1200PX --- */
 @media (max-width: 1200px) {
+  /* Resetowanie mobilnych właściwości menu */
+  .navbar {
+    width: auto;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .navbar .text-wrapper {
+    width: auto;
+  }
+
+  /* Logika mobilna - zachowana z poprzedniej wersji */
   .navi {
     padding: 20px 40px;
   }
@@ -618,6 +637,7 @@ a {
     background-color: var(--variable-collection-dark-blue);
     align-items: flex-start;
     transition: all 0.3s ease-in-out;
+    z-index: 9; /* Upewnij się, że jest pod przyciskiem hamburgera, ale nad resztą strony */
   }
   
   .navbar.active a {
@@ -717,10 +737,6 @@ a {
     .photo {
       flex-direction: column;
       gap: 20px;
-    }
-    .photo .copy-2 {
-      padding: 0;
-      text-align: center;
     }
     .photo .IMG-2,
     .photo .IMG-3 {
