@@ -1,799 +1,500 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
-/* Global styles and variables from original styleguide.css */
-:root {
-  --variable-collection-dark-blue: rgba(0, 0, 57, 1);
-  --variable-collection-blue: rgba(0, 1, 101, 1);
-  --variable-collection-TXT-blue: rgba(5, 5, 60, 1);
-  --variable-collection-yellow: rgba(248, 195, 58, 1);
-  --variable-collection-light-blue: rgba(179, 228, 254, 1);
-  --variable-collection-pink: rgba(249, 231, 252, 1);
-}
-
-/* Base styles and combined content from globals.css and style.css */
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-html,
+/* Główne style */
 body {
-  margin: 0;
-  height: 100%;
-}
-
-a {
-  text-decoration: none;
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  color: var(--variable-collection-TXT-blue);
+  background-color: #ffffff;
 }
 
 .desktop {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
   width: 100%;
+  overflow-x: hidden;
 }
 
-.navi,
-.header,
-.section,
-.section-2,
-.section-3,
-.section-4,
-.section-5 {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  flex-direction: column;
-}
-
+/* Sekcja nawigacji */
 .navi {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  min-height: 100px;
-  justify-content: space-between;
-  /* Zmiana paddingu na 60px */
-  padding: 32px 60px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   background-color: var(--variable-collection-dark-blue);
-  flex-direction: row;
+  padding: 20px 0;
 }
 
 .navbar {
   display: flex;
-  /* Wyrównanie do góry kontenera navi */
-  align-items: flex-start;
-  /* Równomierne rozłożenie pozycji na dostępnej szerokości */
-  justify-content: space-between;
-  /* Pozwala menu zająć całą dostępną przestrzeń */
-  flex-grow: 1; 
-  /* Dodaj margines między menu a przyciskiem CTA */
-  margin-right: 30px; 
-  flex-shrink: 0; 
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar .text-wrapper {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  /* Ostatnie zmniejszenie czcionki */
-  font-size: 18px;
-  text-align: left;
-  /* Wymuś łamanie tekstu */
-  display: block;
-  /* Ustawienie minimalnej szerokości na 80px, aby zmieściło się 8 pozycji */
-  flex: 1 1 80px; 
-  min-width: 80px;
-  line-height: 1.1; 
-  white-space: normal;
-}
-
-.primary-button {
-  all: unset;
-  display: flex;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px 30px;
-  background-color: var(--variable-collection-yellow);
-  border-radius: 1000px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.primary-button .text {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
-  font-weight: 400;
-  font-size: 20px;
-  text-align: center;
-}
-
-/* Style for the hamburger button, initially hidden */
-.hamburger-menu {
-  display: none; /* Domyślnie ukryty dla desktopu */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 11;
-}
-
-.bar {
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger-menu.active .bar:nth-child(1) {
-  transform: translateY(11px) rotate(45deg);
-}
-
-.hamburger-menu.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-menu.active .bar:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
-}
-
-.header {
-  height: 500px;
   flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: var(--variable-collection-dark-blue);
-  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  gap: 20px 40px;
+  padding: 0 20px;
+  margin: 0;
 }
 
-.header .IMG {
-  flex: 1;
-  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
-  background-image: url(./img/background-image-czym-jest-rsv);
-  background-size: cover;
-  background-position: center;
+.navbar a {
+  font-family: "Pfizer Diatype-Bold", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.header .COPY {
-  flex: 1;
+/* Sekcja nagłówka */
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 43px;
-  padding: 20px 120px 0 60px;
+  flex-wrap: wrap;
+  width: 100%;
   background-color: var(--variable-collection-blue);
 }
 
-.header .HL {
+/* Nowe style dla slidera, z elementami sterującymi */
+.slider-container {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.slider-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-img.active {
+  opacity: 1;
+}
+
+/* Przyciski sterujące (play/pause) */
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.play-pause-btn {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 0.3s;
+}
+
+.play-pause-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ikony tła dla przycisku - musisz mieć własne pliki SVG */
+.play-pause-btn.playing {
+  background-image: url('img/pause-icon.svg'); /* Zmień na ścieżkę do Twojej ikony pauzy */
+}
+
+.play-pause-btn.paused {
+  background-image: url('img/play-icon.svg'); /* Zmień na ścieżkę do Twojej ikony odtwarzania */
+}
+
+/* Kropki wskaźnika slajdów */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% + 40px);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #ffffff;
+}
+
+.header-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 100px 0 0;
-}
-
-.header .HL .div,
-.header .HL .tak-e-tych-bezp {
-  color: #fff;
-}
-
-.header .HL .div {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 34px;
-}
-
-.header .HL .tak-e-tych-bezp {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 28px;
-  margin-top: -10px;
-}
-
-.button-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.CTA {
-  all: unset;
-  display: flex;
-  width: 500px;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  padding: 40px;
+  color: #ffffff;
+}
+
+.headline {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica, sans-serif;
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.subheadline {
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
   gap: 10px;
-  padding: 20px 30px;
+  padding: 15px 30px;
+  margin-top: 30px;
   background-color: var(--variable-collection-yellow);
   border-radius: 1000px;
+  border: none;
   cursor: pointer;
 }
 
-.CTA .informacje-o {
+.cta-text {
+  font-family: "Pfizer Diatype-Heavy", Helvetica, sans-serif;
+  font-weight: 900;
   color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  text-align: center;
+  font-size: 18px;
+  white-space: nowrap;
 }
 
-.section {
-  padding: 40px 120px 60px;
+.arrow img {
+  width: 15px;
+  height: auto;
 }
 
-.czym-jest-RSV-wrapper,
-.kto-jest-w-grupie-wrapper {
-  display: flex;
-  justify-content: center;
+/* Sekcje ogólne */
+section {
   width: 100%;
-  flex-wrap: wrap;
-  padding: 10px 0;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.czym-jest-RSV,
-.kto-jest-w-grupie {
-  color: #000;
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
+.section-title, .section-title-alt, .section-title-main, .section-title-secondary {
+  font-family: "Pfizer Diatype-HeavyItalic", Helvetica, sans-serif;
   font-style: italic;
-  font-size: 40px;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.copy {
+.section-title-alt, .section-title-main {
+  color: var(--variable-collection-dark-blue);
+}
+
+.section-title-alt {
+  color: #ffffff;
+}
+
+.section-text {
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-text-alt {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+/* Sekcja "Czym jest RSV?" */
+.section-content {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
+}
+
+.icon img {
+  width: 80px;
+  height: auto;
+}
+
+/* Sekcja "Kto jest w grupie ryzyka?" */
+.risk-group-boxes {
+  display: flex;
   flex-wrap: wrap;
-}
-
-.copy .separator {
-  width: 30px;
-  height: 122px;
-}
-
-.copy .icon {
-  width: 109px;
-  display: flex;
   justify-content: center;
-}
-
-.copy .TXT {
-  display: flex;
-  width: 997px;
-  justify-content: center;
-  align-items: center;
-}
-
-.copy .RSV-to-powszechny-i {
-  color: #000;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.boxes {
-  display: flex;
-  justify-content: space-between;
-  width: 1200px;
-  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.box .element {
-  width: 330px;
-  height: 120px;
-}
-
-.box .div-wrapper,
-.box .TXT-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  gap: 15px;
+  flex-basis: calc(25% - 22.5px);
+  min-width: 200px;
 }
 
-.box .seniorzy-powy-ej,
-.box .text-wrapper-2 {
-  color: #000;
-  font-family: "Pfizer Diatype-Heavy", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
+.box img {
+  width: 100px;
+  height: auto;
 }
 
-.section-2 {
-  padding: 40px 120px;
-  gap: 60px;
+.box-text {
+  font-family: "Pfizer Diatype-Heavy", Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* Sekcja "RSV a Grypa" */
+.rsv-vs-grypa-section {
   background-color: var(--variable-collection-dark-blue);
+  color: #ffffff;
+  /* Usuwamy ogranicznik szerokości */
+  max-width: none;
 }
 
-.HL-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+.rsv-vs-grypa-section > * {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.HL-2 .RSV-a {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 40px;
-  text-align: center;
-}
-
-.HL-2 .RSV-a .text-wrapper-3 {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-style: italic;
-  color: var(--variable-collection-light-blue);
-}
-
-.HL-2 .RSV-a .text-wrapper-4 {
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-style: italic;
-  color: #fff;
-}
-
-.HL-2 .p {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.boxes-2 {
+.comparative-boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.left,
-.right {
+.box-column {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
+  flex-basis: calc(50% - 20px);
+  min-width: 300px;
 }
 
-.left {
-  width: 589px;
-}
-
-.box-2 {
+.box-comparison {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding: 0 10px;
-}
-
-.box-3 {
-  display: flex;
-  align-items: flex-start;
-  gap: 120px;
-  padding: 0 10px;
-}
-
-.box-2 .div-2,
-.box-3 .div-2 {
-  color: #fff;
-  font-size: 24px;
-  line-height: 24px;
-}
-
-.box-2 .div-2 .text-wrapper-6,
-.box-3 .div-2 .text-wrapper-6 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-}
-
-.box-2 .div-2 .text-wrapper-7,
-.box-3 .div-2 .text-wrapper-7 {
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-}
-
-.section-3 {
-  padding: 40px 120px;
-  gap: 70px;
-}
-
-.HL-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-3 .text-wrapper-10 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.column {
-  display: flex;
-  justify-content: center;
-  gap: 200px;
-  width: 100%;
-}
-
-.column .div-3 {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  width: 385px;
-}
-
-.HL-wrapper {
-  padding: 40px 120px;
-  gap: 70px;
-  background-color: var(--variable-collection-pink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.HL-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.HL-4 .hospitalizacja-cho {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.HL-4 .szczepionka-zalecana {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  width: 844px;
-}
-
-.photo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.photo .IMG-2,
-.photo .IMG-3 {
-  width: 584px;
-  height: 339px;
-  background-size: cover;
-  background-position: center;
-}
-
-.photo .IMG-2 {
-  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
-  background-image: url(./img/img-1);
-}
-
-.photo .IMG-3 {
-  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
-  background-image: url(./img/img-2);
-}
-
-.photo .copy-2 {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 60px;
-  flex: 1;
-}
-
-.photo .copy-2 .text-wrapper-11,
-.photo .copy-2 .kobiety-w-ci-y {
-  color: var(--variable-collection-TXT-blue);
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.section-4 {
-  padding: 40px 120px;
-  gap: 20px;
-  background-color: var(--variable-collection-blue);
-}
-
-.div-4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-}
-
-.section-4 .text-wrapper-12 {
-  color: var(--variable-collection-light-blue);
-  font-family: "Pfizer Diatype-HeavyItalic", Helvetica;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 40px;
-  text-align: center;
-}
-
-.section-4 .p {
-  color: #fff;
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-}
-
-.TXT-3 {
-  display: inline-flex;
-  justify-content: center;
-  gap: 60px;
-}
-
-.TXT-3 .zadbaj-o-swoje {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
-  width: 518px;
-  height: 193px;
-}
-
-.TXT-3 .OK {
-  width: 336px;
-  height: 293px;
-  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
-  background-image: url(./img/vector-10);
-  background-size: cover;
-}
-
-.section-5 {
-  padding: 40px 120px 80px;
-  gap: 60px;
-  background-color: var(--variable-collection-dark-blue);
-}
-
-.section-5 .div-4 {
   gap: 15px;
 }
 
-.section-5 .div-5 {
-  color: #fff;
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
-  font-size: 14px;
-  width: 100%;
+.box-comparison img {
+  width: 60px;
+  height: auto;
 }
 
-.section-5 .div-5 .text-wrapper-14 {
-  font-family: "Pfizer Diatype-Bold", Helvetica;
-  font-weight: 700;
+.data {
+  font-family: "Pfizer Tomorrow-Bold", Helvetica, sans-serif;
+  font-size: 48px;
+  color: var(--variable-collection-light-blue);
 }
 
-/* Nowy styl dla linków w stopce */
-.section-5 .footer-links {
-  list-style: none; /* Usuń punktor */
+.box-description {
+  font-family: "Pfizer Diatype-Regular", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Sekcja "Objawy i zagrożenia" */
+.symptoms-section {
+  background-color: #ffffff;
+}
+
+.symptoms-list {
+  margin-top: 40px;
+}
+
+.symptoms-columns {
   display: flex;
-  justify-content: center; /* Wyśrodkuj linki */
-  gap: 30px; /* Odstęp między linkami */
-  padding: 0;
-  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
-.section-5 .footer-links a {
-  color: #fff; 
-  font-family: "Pfizer Diatype-Regular", Helvetica;
-  font-weight: 400;
+.symptom-column {
+  flex-basis: calc(50% - 20px);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.symptom-item {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.threats-section {
+  background-color: var(--variable-collection-pink);
+  /* Usuwamy ogranicznik szerokości */
+  max-width: none;
+}
+
+.threats-section > * {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.threats-text p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Sekcja "Dla kogo szczepionka" */
+.vaccine-section {
+  background-color: #ffffff;
+}
+
+.photo-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.photo-card.reversed {
+  flex-direction: row-reverse;
+}
+
+.photo-card img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+.photo-content {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Sekcja "Gdzie się zaszczepić" */
+.where-to-vaccinate-section {
+  background-color: var(--variable-collection-blue);
+  color: #ffffff;
+  padding: 60px 20px;
+  /* Usuwamy ogranicznik szerokości */
+  max-width: none;
+}
+
+.where-to-vaccinate-section > * {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-content-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.main-content-text {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.ok-image {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Sekcja stopki */
+.footer {
+  width: 100%;
+  background-color: var(--variable-collection-dark-blue);
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.disclaimer, .legal-info {
   font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  margin: 20px 0;
+}
+
+.footer-nav a {
+  color: #ffffff;
   text-decoration: none;
-  /* Zgodnie z oryginalnym .div-5 */
 }
 
-/* Nowy styl dla linków w referencjach, by były klikalne i widoczne */
-.section-5 .div-5 a {
-    color: var(--variable-collection-light-blue); /* Jasnoniebieski kolor linków */
-    text-decoration: underline;
-}
-
-/* --- LOGIKA MOBILNA DLA EKRANÓW MNIEJSZYCH NIŻ 1200PX --- */
-@media (max-width: 1200px) {
-  /* Resetowanie desktopowych właściwości, by menu mobilne się nie psuło */
-  .navbar {
-    flex-grow: 0;
-    margin-right: 0;
-    justify-content: flex-start;
+/* Media Queries dla responsywności */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  .header-content {
+    align-items: center;
+    text-align: center;
+  }
+  .risk-group-boxes, .comparative-boxes, .symptoms-columns, .photo-card {
+    flex-direction: column;
     align-items: center;
   }
-  .navbar .text-wrapper {
-    flex: 0 0 auto;
-    min-width: 100px; /* Zabezpieczenie przed zbyt dużym skurczeniem */
-    font-size: 21px; /* Przywrócenie pierwotnego rozmiaru na mobile */
+  .box, .box-column, .symptom-column {
+    flex-basis: 100%;
   }
-
-  /* Logika mobilna - zachowana z poprzedniej wersji */
-  .navi {
-    padding: 20px 40px;
-  }
-  
-  /* Ukryj standardowe menu i pokaż hamburger */
-  .navbar {
-    display: none;
-  }
-  
-  .hamburger-menu {
-    display: flex;
-  }
-  
-  /* Przestaw przycisk na prawo, aby zrobić miejsce dla hamburgera */
-  .primary-button {
-    margin-left: auto;
-  }
-  
-  /* Styl dla rozwiniętego menu hamburgera */
-  .navbar.active {
-    display: flex;
+  .photo-card.reversed {
     flex-direction: column;
-    position: absolute;
-    top: 100px; /* Wysokość navi */
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: var(--variable-collection-dark-blue);
-    align-items: flex-start;
-    transition: all 0.3s ease-in-out;
-    z-index: 9; /* Upewnij się, że jest pod przyciskiem hamburgera, ale nad resztą strony */
   }
-  
-  .navbar.active a {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
+  .main-content-row {
+    flex-direction: column;
   }
+}
 
-  /* Poprawki dla małych ekranów (np. 800px) dla ogólnego układu strony, a nie tylko nawigacji */
-  @media screen and (max-width: 800px) {
-    .navi {
-      padding: 20px;
-    }
-    .header {
-      flex-direction: column;
-      height: auto;
-      padding: 20px;
-      text-align: center;
-    }
-    .header .IMG {
-      display: none;
-    }
-    .header .COPY {
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-    .header .HL {
-      align-items: center;
-      padding: 0;
-    }
-    .header .HL .div {
-      font-size: 28px;
-    }
-    .header .HL .tak-e-tych-bezp {
-      font-size: 18px;
-    }
-    .button-wrapper {
-      flex-direction: column;
-      width: 100%;
-    }
-    .CTA {
-      width: 100%;
-    }
-    .section,
-    .section-2,
-    .section-3,
-    .section-4,
-    .section-5,
-    .footer {
-      padding: 20px;
-    }
-    .copy {
-      flex-direction: column;
-      gap: 20px;
-    }
-    .copy .separator,
-    .copy .icon,
-    .copy .TXT {
-      width: 100%;
-      text-align: center;
-    }
-    .boxes {
-      flex-direction: column;
-      gap: 40px;
-      width: 100%;
-    }
-    .box {
-      width: 100%;
-    }
-    .section-2 .boxes-2 {
-      flex-direction: column;
-    }
-    .left,
-    .right {
-      width: 100%;
-    }
-    .box-2,
-    .box-3 {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      gap: 10px;
-    }
-    .HL-2 .p,
-    .HL-4 .szczepionka-zalecana {
-      width: 100%;
-    }
-    .column {
-      flex-direction: column;
-      gap: 40px;
-    }
-    .column .div-3 {
-      width: 100%;
-      text-align: center;
-    }
-    .photo {
-      flex-direction: column;
-      gap: 20px;
-    }
-    .photo .IMG-2,
-    .photo .IMG-3 {
-      width: 100%;
-      height: 200px;
-    }
-    .TXT-3 {
-      flex-direction: column;
-      gap: 20px;
-    }
-    .TXT-3 .zadbaj-o-swoje {
-      width: 100%;
-      height: auto;
-      text-align: center;
-    }
-
-    /* Zmiana w stopce na widoku mobilnym - linki prawne pionowo */
-    .section-5 .footer-links {
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-    }
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: 16px;
+  }
+  .headline, .subheadline, .section-title, .section-title-alt, .section-title-main, .section-title-secondary {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  .cta-button {
+    padding: 10px 20px;
+  }
+  .cta-text {
+    font-size: 16px;
   }
 }
