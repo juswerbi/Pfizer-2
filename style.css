@@ -156,7 +156,7 @@ a {
 
 .header .IMG {
   flex: 1;
-  /* POPRAWIONA ŚCIEŻKA (img.png -> background-image-czym-jest-rsv) */
+  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
   background-image: url(./img/background-image-czym-jest-rsv);
   background-size: cover;
   background-position: center;
@@ -500,12 +500,12 @@ a {
 }
 
 .photo .IMG-2 {
-  /* POPRAWIONA ŚCIEŻKA (img-1.png -> img-1) */
+  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
   background-image: url(./img/img-1);
 }
 
 .photo .IMG-3 {
-  /* POPRAWIONA ŚCIEŻKA (img-2.png -> img-2) */
+  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
   background-image: url(./img/img-2);
 }
 
@@ -574,7 +574,7 @@ a {
 .TXT-3 .OK {
   width: 336px;
   height: 293px;
-  /* POPRAWIONA ŚCIEŻKA (vector-10.svg -> vector-10) */
+  /* POPRAWIONA ŚCIEŻKA (Używamy pliku tła z listy) */
   background-image: url(./img/vector-10);
   background-size: cover;
 }
