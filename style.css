@@ -156,7 +156,8 @@ a {
 
 .header .IMG {
   flex: 1;
-  background-image: url(./img/img.png);
+  /* POPRAWIONA ŚCIEŻKA (img.png -> background-image-czym-jest-rsv) */
+  background-image: url(./img/background-image-czym-jest-rsv);
   background-size: cover;
   background-position: center;
 }
@@ -499,11 +500,13 @@ a {
 }
 
 .photo .IMG-2 {
-  background-image: url(./img/img-1.png);
+  /* POPRAWIONA ŚCIEŻKA (img-1.png -> img-1) */
+  background-image: url(./img/img-1);
 }
 
 .photo .IMG-3 {
-  background-image: url(./img/img-2.png);
+  /* POPRAWIONA ŚCIEŻKA (img-2.png -> img-2) */
+  background-image: url(./img/img-2);
 }
 
 .photo .copy-2 {
@@ -571,7 +574,8 @@ a {
 .TXT-3 .OK {
   width: 336px;
   height: 293px;
-  background-image: url(./img/vector-10.svg);
+  /* POPRAWIONA ŚCIEŻKA (vector-10.svg -> vector-10) */
+  background-image: url(./img/vector-10);
   background-size: cover;
 }
 
